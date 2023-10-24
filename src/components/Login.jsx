@@ -1,9 +1,16 @@
-import AuthContext from "../context/AuthContext"
-import { useContext } from "react";
+import AuthContext from "../context/AuthContext";
+import { useContext, useState } from "react";
 
 const Login = () => {
   const { currentUser, setCurrentUser, newUser, setNewUser } =
     useContext(AuthContext);
+
+  const [userInfo, setUserInfo] = useState({ username: "", password: "" });
+
+  const handleChange = (e) => {
+    const {name, value} = e.target
+    setUserInfo({...userInfo, [name]: value})
+  };
 
   const handleAccountSubmit = (e) => {
     e.preventDefault();
@@ -58,7 +65,12 @@ const Login = () => {
           className="bg-gray-200 p-2 cursor-pointer"
           value="Submit"
         />
-        <button onClick={handleSignUp} className="bg-gray-200 p-2 cursor-pointer ml-24">Back to Login</button>
+        <button
+          onClick={handleSignUp}
+          className="bg-gray-200 p-2 cursor-pointer ml-24"
+        >
+          Back to Login
+        </button>
       </form>
     </div>
   ) : (
@@ -68,13 +80,22 @@ const Login = () => {
       <form onSubmit={handleLoginSubmit} className="w-full max-w-xs mt-12">
         <div className="mb-4">
           <label className="block mb-2">Username</label>
-          <input type="text" className="border border-gray-300 p-1 w-full" />
+          <input
+            type="text"
+            className="border border-gray-300 p-1 w-full"
+            name="username"
+            value={userInfo.username}
+            onChange={handleChange}
+          />
         </div>
         <div className="mb-4">
           <label className="block mb-2">Password</label>
           <input
             type="password"
             className="border border-gray-300 p-1 w-full"
+            name="password"
+            value={userInfo.password}
+            onChange={handleChange}
           />
         </div>
         <input
