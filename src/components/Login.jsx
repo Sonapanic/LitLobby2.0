@@ -16,7 +16,10 @@ const Login = () => {
     last_name: "",
   });
 
-  const [userCreated, setUserCreated] = useState({isNew: false, rejected: false});
+  const [userCreated, setUserCreated] = useState({
+    isNew: false,
+    rejected: false,
+  });
 
   const clearForm = () => {
     setUserInfo({
@@ -49,21 +52,21 @@ const Login = () => {
     try {
       await fetch(`${localUrl}/register`, options);
       clearForm();
-      setUserCreated({...userCreated, isNew: true, rejected: false});
+      setUserCreated({ ...userCreated, isNew: true, rejected: false });
     } catch (err) {
-      console.error("Couldn't log in")
-      setUserCreated({...userCreated, isNew: false, rejected: true})
+      console.error("Couldn't sign up");
+      setUserCreated({ ...userCreated, isNew: false, rejected: true });
     }
   };
 
-  const handleLoginSubmit = (e) => {
+  const handleSignUp = () => {
+    clearForm();
+    setNewUser(!newUser);
+  };
+
+  const handleLoginSubmit = async (e) => {
     // post request to authenticate returning user
     e.preventDefault();
-    // setCurrentUser({
-    //   username: "test",
-    //   firstName: "isaac",
-    //   lastName: "summers",
-    // });
 
     const options = {
       method: "POST",
@@ -73,11 +76,20 @@ const Login = () => {
       },
       body: JSON.stringify(userInfo),
     };
-  };
 
-  const handleSignUp = () => {
-    clearForm();
-    setNewUser(!newUser);
+    try {
+      const response = await fetch(`${localUrl}/login`, options);
+
+      if (response.ok) {
+        const user = await response.json()
+        setCurrentUser(user)
+      } else {
+        throw new Error('Login response not ok')
+      }
+
+    } catch (err) {
+      console.error("Couldn't log in");
+    }
   };
 
   return newUser ? (
@@ -147,12 +159,18 @@ const Login = () => {
         </button>
       </form>
       {userCreated.isNew ? (
-        <span className="text-green-500">You've been successfully registered to LitLobby! Please log in to continue.</span>
+        <span className="text-green-500">
+          You've been successfully registered to LitLobby! Please log in to
+          continue.
+        </span>
       ) : (
         <span></span>
       )}
       {userCreated.rejected ? (
-        <span>Either the username or email you entered has already been registered. Please try a new one.</span>
+        <span>
+          Either the username or email you entered has already been registered.
+          Please try a new one.
+        </span>
       ) : (
         <span></span>
       )}

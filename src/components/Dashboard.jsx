@@ -7,12 +7,10 @@ import AuthContext from "../context/AuthContext"
 const Dashboard = () => {
     
     const { currentUser } = useContext(AuthContext)
-
+    const {username, email, first_name, last_name } = currentUser
 
     return (
-        <ul>
-            {Object.values(currentUser).map((elem) => <li>{elem}</li>)}
-        </ul>
+        <span>Welcome to LitLobby, {first_name}!</span>
     )
 }
 

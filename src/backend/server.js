@@ -15,7 +15,27 @@ const port = process.env.PORT;
 
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 
-// GET requests
+async function checkUser(username, password) {
+  try {
+    const user = await pool.query(
+      "SELECT username, hashed_password, email, first_name, last_name FROM users WHERE username = $1",
+      [username]
+    );
+    const match = await bcrypt.compare(password, user.rows[0].hashed_password);
+    if (match) {
+      return user.rows[0]
+    } else {
+      throw new Error('Passwords do not match')
+    }
+  } catch (err) {
+    console.error(err);
+    return null
+  }
+}
+
+
+
+// GET routes
 app.get("/users", async (req, res) => {
   try {
     const users = await pool.query("SELECT * FROM users ORDER BY userId ASC");
@@ -63,7 +83,7 @@ app.get("/books/:id", async (req, res) => {
   }
 });
 
-// POST requests
+// POST routes
 
 // app.post('/users', async (req, res) => {
 //     const { username, hashed_password, email, first_name, last_name } = req.body
@@ -120,7 +140,22 @@ app.post("/register", async (req, res) => {
   }
 });
 
-// DELETE requests
+app.post("/login", async (req, res) => {
+  const { username, password } = req.body;
+  try {
+    const result = await checkUser(username, password);
+    if (result !== null) {
+      res.status(200).json(result)
+    } else {
+      res.status(400).send('Authentication issue')
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Login error");
+  }
+});
+
+// DELETE routes
 
 app.delete("/users/:id", async (req, res) => {
   const { id } = req.params;
@@ -158,7 +193,7 @@ app.delete("/books/:userId/:bookId", async (req, res) => {
   }
 });
 
-// UPDATE requests
+// UPDATE routes
 app.put("/users/:id", async (req, res) => {
   const { id } = req.params;
   const { username, hashed_password, email, first_name, last_name } = req.body;
