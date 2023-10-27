@@ -1,5 +1,8 @@
 import AuthContext from "../context/AuthContext";
 import { useContext, useState } from "react";
+import Toast from './Toast'
+
+
 
 const Login = () => {
   const { currentUser, setCurrentUser, newUser, setNewUser } =
@@ -20,6 +23,10 @@ const Login = () => {
     isNew: false,
     rejected: false,
   });
+
+  const isPasswordValid = userInfo.password.length >= 8
+
+  
 
   const clearForm = () => {
     setUserInfo({
@@ -52,11 +59,14 @@ const Login = () => {
     try {
       await fetch(`${localUrl}/register`, options);
       clearForm();
+      handleSignUp()
       setUserCreated({ ...userCreated, isNew: true, rejected: false });
     } catch (err) {
       console.error("Couldn't sign up");
       setUserCreated({ ...userCreated, isNew: false, rejected: true });
     }
+
+
   };
 
   const handleSignUp = () => {
@@ -93,7 +103,7 @@ const Login = () => {
   };
 
   return newUser ? (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center w-90">
       <h2 className="mb-4">Please enter the following information:</h2>
       <form onSubmit={handleAccountSubmit} className="w-full max-w-xs">
         <div className="mb-4">
@@ -104,6 +114,7 @@ const Login = () => {
             name="username"
             value={userInfo.username}
             onChange={handleChange}
+            required
           />
         </div>
         <div className="mb-4">
@@ -114,7 +125,9 @@ const Login = () => {
             name="password"
             value={userInfo.password}
             onChange={handleChange}
+            required
           />
+          {isPasswordValid ? <span></span> : <span>Passwords should contain at least 8 characters</span>}
         </div>
         <div className="mb-4">
           <label className="block mb-2">Email</label>
@@ -124,6 +137,7 @@ const Login = () => {
             name="email"
             value={userInfo.email}
             onChange={handleChange}
+            required
           />
         </div>
         <div className="mb-4">
@@ -134,6 +148,7 @@ const Login = () => {
             name="first_name"
             value={userInfo.first_name}
             onChange={handleChange}
+            required
           />
         </div>
         <div className="mb-4">
@@ -144,13 +159,22 @@ const Login = () => {
             name="last_name"
             value={userInfo.last_name}
             onChange={handleChange}
+            required
           />
         </div>
-        <input
+        
+        {isPasswordValid ? 
+          <input
           type="submit"
           className="bg-gray-200 p-2 cursor-pointer"
           value="Submit"
+          onSubmit={handleAccountSubmit}
         />
+        : 
+        <button className="bg-blue-200 p-2 cursor-pointer">
+          Submit
+        </button>
+      }
         <button
           onClick={handleSignUp}
           className="bg-gray-200 p-2 cursor-pointer ml-24"
