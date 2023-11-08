@@ -24,9 +24,6 @@ const Header = () => {
                     <span></span>
                 )}
             </div>
-            {currentUser ? <div className="ml-12">
-                <span>{currentUser.first_name}'s Lobby</span>
-            </div> : <div></div>}
         </div>
     );
 };

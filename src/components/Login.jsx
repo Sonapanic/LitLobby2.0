@@ -10,8 +10,6 @@ const Login = () => {
 
 
   const renderUrl = "https://litlobby.onrender.com";
-
-
   const localUrl = "http://localhost:10000";
 
 
