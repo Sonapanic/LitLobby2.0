@@ -1,6 +1,6 @@
 import AuthContext from "../context/AuthContext";
 import { useContext, useState } from "react";
-import Toast from './Toast'
+import { toast } from 'react-toastify'
 
 
 
@@ -26,7 +26,9 @@ const Login = () => {
 
   const isPasswordValid = userInfo.password.length >= 8
 
-  
+  const showToast = (message) => {
+    toast(message)
+  }
 
   const clearForm = () => {
     setUserInfo({
@@ -61,6 +63,7 @@ const Login = () => {
       clearForm();
       handleSignUp()
       setUserCreated({ ...userCreated, isNew: true, rejected: false });
+      showToast('Account created! Please log in.')
     } catch (err) {
       console.error("Couldn't sign up");
       setUserCreated({ ...userCreated, isNew: false, rejected: true });
