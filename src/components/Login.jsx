@@ -1,6 +1,6 @@
 import AuthContext from "../context/AuthContext";
 import { useContext, useState } from "react";
-import Toast from './Toast'
+import { toast } from 'react-toastify'
 
 
 
@@ -9,7 +9,11 @@ const Login = () => {
     useContext(AuthContext);
 
 
+  const renderUrl = "https://litlobby.onrender.com";
+
+
   const localUrl = "http://localhost:10000";
+
 
   const [userInfo, setUserInfo] = useState({
     username: "",
@@ -26,7 +30,9 @@ const Login = () => {
 
   const isPasswordValid = userInfo.password.length >= 8
 
-  
+  const showToast = (message) => {
+    toast(message)
+  }
 
   const clearForm = () => {
     setUserInfo({
@@ -57,10 +63,11 @@ const Login = () => {
     };
 
     try {
-      await fetch(`${localUrl}/register`, options);
+      await fetch(`${renderUrl}/register`, options);
       clearForm();
       handleSignUp()
       setUserCreated({ ...userCreated, isNew: true, rejected: false });
+      showToast('Account created! Please log in.')
     } catch (err) {
       console.error("Couldn't sign up");
       setUserCreated({ ...userCreated, isNew: false, rejected: true });
@@ -88,7 +95,7 @@ const Login = () => {
     };
 
     try {
-      const response = await fetch(`${localUrl}/login`, options);
+      const response = await fetch(`${renderUrl}/login`, options);
 
       if (response.ok) {
         const user = await response.json()

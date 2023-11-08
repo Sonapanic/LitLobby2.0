@@ -4,7 +4,9 @@ import { useContext } from "react"
 
 
 const Header = () => {
-    const { currentUser } = useContext(AuthContext);
+
+    const { currentUser } = useContext(AuthContext)
+
 
     return (
         <div className="h-20 bg-blue-300 w-full flex items-center">
@@ -22,6 +24,9 @@ const Header = () => {
                     <span></span>
                 )}
             </div>
+            {currentUser ? <div className="ml-12">
+                <span>{currentUser.first_name}'s Lobby</span>
+            </div> : <div></div>}
         </div>
     );
 };
