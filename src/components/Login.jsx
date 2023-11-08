@@ -9,7 +9,6 @@ const Login = () => {
     useContext(AuthContext);
 
   const renderUrl = "https://litlobby.onrender.com";
-  const localUrl = "http://localhost:10000";
 
   const [userInfo, setUserInfo] = useState({
     username: "",
@@ -59,7 +58,7 @@ const Login = () => {
     };
 
     try {
-      await fetch(`${localUrl}/register`, options);
+      await fetch(`${renderUrl}/register`, options);
       clearForm();
       handleSignUp()
       setUserCreated({ ...userCreated, isNew: true, rejected: false });
@@ -91,7 +90,7 @@ const Login = () => {
     };
 
     try {
-      const response = await fetch(`${localUrl}/login`, options);
+      const response = await fetch(`${renderUrl}/login`, options);
 
       if (response.ok) {
         const user = await response.json()
