@@ -1,16 +1,13 @@
 import AuthContext from "../context/AuthContext";
 import { useContext, useState } from "react";
-import { toast } from 'react-toastify'
 
 
 
 const Login = () => {
-  const { currentUser, setCurrentUser, newUser, setNewUser } =
+  const { currentUser, setCurrentUser, newUser, setNewUser, showToast, renderUrl } =
     useContext(AuthContext);
 
 
-  const renderUrl = "https://litlobby.onrender.com";
-  const localUrl = "http://localhost:10000";
 
 
   const [userInfo, setUserInfo] = useState({
@@ -28,9 +25,7 @@ const Login = () => {
 
   const isPasswordValid = userInfo.password.length >= 8
 
-  const showToast = (message) => {
-    toast(message)
-  }
+
 
   const clearForm = () => {
     setUserInfo({
@@ -98,6 +93,7 @@ const Login = () => {
       if (response.ok) {
         const user = await response.json()
         setCurrentUser(user)
+        showToast(`Welcome to LitLobby!`)
       } else {
         throw new Error('Login response not ok')
       }
