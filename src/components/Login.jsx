@@ -8,7 +8,7 @@ const Login = () => {
   const { currentUser, setCurrentUser, newUser, setNewUser } =
     useContext(AuthContext);
 
-  const renderUrl = "https://litlobby.onrender.com";
+
   const localUrl = "http://localhost:10000";
 
   const [userInfo, setUserInfo] = useState({
