@@ -8,7 +8,6 @@ import { useContext } from 'react'
 const BookCards = () => {
 
     const { renderURL } = useContext(AuthContext)
-    // const books = await fetch(`${renderURL}/books`)
 
     return (
         <div>
