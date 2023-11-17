@@ -18,7 +18,7 @@ const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 async function checkUser(username, password) {
   try {
     const user = await pool.query(
-      "SELECT username, hashed_password, email, first_name, last_name FROM users WHERE username = $1",
+      "SELECT * FROM users WHERE username = $1",
       [username]
     );
     const match = await bcrypt.compare(password, user.rows[0].hashed_password);

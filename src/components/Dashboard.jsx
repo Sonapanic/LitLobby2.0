@@ -8,7 +8,7 @@ import BookCards from './BookCards'
 const Dashboard = () => {
     
     const { currentUser } = useContext(AuthContext)
-    const {username, email, first_name, last_name } = currentUser
+    const { id, username, email, first_name, last_name } = currentUser
 
     return <BookCards />
 
