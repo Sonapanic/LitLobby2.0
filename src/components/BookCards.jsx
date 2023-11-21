@@ -1,24 +1,23 @@
-import Book from './Book'
-import AuthContext from '../context/AuthContext'
-import { useContext } from 'react'
-
-
-
+import DataContext from "../context/DataContext";
+import { useContext } from "react";
+import Book from './Book.jsx'
 
 const BookCards = () => {
+  const { books } = useContext(DataContext);
 
-    const { renderURL } = useContext(AuthContext)
+  return (
+    <div className="flex items-center w-[70dvw] h-[90dvh] justify-center border-2 p-2">
+      {books && books.length > 0 ? (
+        <ul className="justify-between">
+          {books.map((book, index) => {
+            return <Book key={index} book={book}/>;
+          })}
+        </ul>
+      ) : (
+        <p></p>
+      )}
+    </div>
+  );
+};
 
-    return (
-        <div>
-
-        </div>
-    )
-
-}
-
-
-
-
-
-export default BookCards
+export default BookCards;
