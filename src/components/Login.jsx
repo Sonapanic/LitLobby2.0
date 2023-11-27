@@ -105,7 +105,7 @@ const Login = () => {
 
   return newUser ? (
     <div className="flex flex-col items-center w-90">
-      <h2 className="mb-4">Please enter the following information:</h2>
+      <h2 className="mb-4 mt-20">Please enter the following information:</h2>
       <form onSubmit={handleAccountSubmit} className="w-full max-w-xs">
         <div className="mb-4">
           <label className="block mb-2">Username</label>
@@ -201,7 +201,7 @@ const Login = () => {
       )}
     </div>
   ) : (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center mt-20">
       <h1>Log Into LitLobby</h1>
       <button onClick={handleSignUp}>Don't have an account? Sign up!</button>
       <form onSubmit={handleLoginSubmit} className="w-full max-w-xs mt-12">

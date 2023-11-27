@@ -12,12 +12,15 @@ function App() {
   const { currentUser, setCurrentUser } = useContext(AuthContext);
 
   return (
-      <div className="flex w-full h-full justify-center items-center flex-wrap">
-        <ToastContainer />
-        <Header />
+    <div className="flex flex-col h-screen bg-ghostWhite">
+      <ToastContainer />
+      <Header />
+      <main className="flex-grow flex justify-center ">
         {currentUser ? <Dashboard /> : <Login />}
-      </div>
+      </main>
+    </div>
   );
 }
 
 export default App;
+
