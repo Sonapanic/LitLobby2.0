@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        ghostWhite: '#F8F8FF',
+        softWhite: '#f3f3f3',
         softBlack: '#3c3c3c'
       }
     }

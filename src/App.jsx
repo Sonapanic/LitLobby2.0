@@ -12,7 +12,7 @@ function App() {
   const { currentUser, setCurrentUser } = useContext(AuthContext);
 
   return (
-    <div className="flex flex-col h-screen bg-ghostWhite">
+    <div className="flex flex-col h-screen bg-softWhite">
       <ToastContainer />
       <Header />
       <main className="flex-grow flex justify-center ">
