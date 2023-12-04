@@ -92,6 +92,8 @@ const Login = () => {
 
       if (response.ok) {
         const user = await response.json()
+        const safeUser = Object.fromEntries(Object.entries(user).filter(([key]) => key !== 'hashed_password'))
+        localStorage.setItem('user', JSON.stringify(safeUser))
         setCurrentUser(user)
         showToast(`Welcome to LitLobby!`)
       } else {
