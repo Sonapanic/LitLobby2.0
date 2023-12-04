@@ -7,7 +7,10 @@ module.exports = {
     extend: {
       colors: {
         softWhite: '#f3f3f3',
-        softBlack: '#3c3c3c'
+        softBlack: '#3c3c3c',
+        warmBrown: '#4B402E',
+        lightGrey: '#d6d6d6',
+        alternateBrown: '#74644b'
       }
     }
   }

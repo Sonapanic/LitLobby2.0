@@ -1,38 +1,41 @@
-import AuthContext from "../context/AuthContext"
-import { useContext } from "react"
+import AuthContext from "../context/AuthContext";
+import { useContext } from "react";
+
+
+
+
+
+
 
 
 
 const Header = () => {
+  const { currentUser } = useContext(AuthContext);
 
-    const { currentUser } = useContext(AuthContext)
-
-
-    return (
-        <div className="h-20 bg-blue-300 w-[100dvw] flex items-center">
-            <div className="ml-4">
-                <span className="text-red-800 text-xl">
-                    Lit<i className="text-blue-900">Lobby</i>
-                </span>
-            </div>
-            <div className="flex items-center justify-center flex-1">
-                {currentUser !== null ? (
-                    <span className="text-center">
-                        {currentUser.first_name}'s Lobby
-                    </span>
-                ) : (
-                    <span></span>
-                )}
-            </div>
-        </div>
-    );
+  return (
+    <div className="h-20 bg-warmBrown w-screen flex items-center justify-between px-4 shadow-inner">
+      <div>
+        <span className="text-lightGrey text-xl">
+          Lit<i className="text-softWhite">Lobby</i>
+        </span>
+      </div>
+      <div className="flex items-center">
+        {currentUser !== null ? (
+          <>
+            <span className="text-xl text-lightGrey">
+              {currentUser.first_name}'s Lobby
+            </span>
+            <button className="ml-4 bg-alternateBrown hover:bg-lightGrey hover:text-softBlack text-lightGrey font-semibold py-2 px-4 rounded-md shadow-md hover:shadow-inner duration-300">
+              Sign Out
+            </button>
+          </>
+        ) : null}
+      </div>
+    </div>
+  );
 };
 
+export default Header;
 
-
-
-
-
-
-
-export default Header
+  
+  
