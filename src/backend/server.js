@@ -3,7 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import bcrypt, { hash } from "bcrypt";
 import pg from "pg";
-import jwt from 'jsonwebtoken'
+import jwt from "jsonwebtoken";
 const { Pool } = pg;
 
 const app = express();
@@ -18,23 +18,20 @@ const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 
 async function checkUser(username, password) {
   try {
-    const user = await pool.query(
-      "SELECT * FROM users WHERE username = $1",
-      [username]
-    );
+    const user = await pool.query("SELECT * FROM users WHERE username = $1", [
+      username,
+    ]);
     const match = await bcrypt.compare(password, user.rows[0].hashed_password);
     if (match) {
-      return user.rows[0]
+      return user.rows[0];
     } else {
-      throw new Error('Passwords do not match')
+      throw new Error("Passwords do not match");
     }
   } catch (err) {
     console.error(err);
-    return null
+    return null;
   }
 }
-
-
 
 // GET routes
 app.get("/users", async (req, res) => {
@@ -135,12 +132,15 @@ app.post("/login", async (req, res) => {
   try {
     const result = await checkUser(username, password);
     if (result !== null) {
-
-      const token = jwt.sign( {userid: result.userid}, process.env.ACCESS_TOKEN_SECRET, {expiresIn: "1h"})
-      res.cookie('token', token, {httpOnly: true})
-      res.status(200).json({result, token})
+      const token = jwt.sign(
+        { userid: result.userid },
+        process.env.ACCESS_TOKEN_SECRET,
+        { expiresIn: "1h" }
+      );
+      res.cookie("token", token, { httpOnly: true });
+      res.status(200).json(result);
     } else {
-      res.status(400).send('Authentication issue')
+      res.status(400).send("Authentication issue");
     }
   } catch (err) {
     console.error(err);
