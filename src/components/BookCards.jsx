@@ -6,7 +6,7 @@ const BookCards = () => {
   const { books, setToBeAdded } = useContext(DataContext);
 
   const handleAdd = () => {
-    
+    setToBeAdded(true)
   }
 
   return (

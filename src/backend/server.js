@@ -24,7 +24,6 @@ async function checkUser(username, password) {
     const match = await bcrypt.compare(password, user.rows[0].hashed_password);
     if (match) {
       const userObject = Object.fromEntries(Object.entries(user.rows[0]).filter(([key]) => key !== 'hashed_password'))
-      console.log(userObject)
       return userObject
     } else {
       throw new Error("Passwords do not match");
