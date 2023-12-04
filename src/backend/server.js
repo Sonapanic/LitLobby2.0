@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import bcrypt, { hash } from "bcrypt";
 import pg from "pg";
+import jwt from 'jsonwebtoken'
 const { Pool } = pg;
 
 const app = express();
@@ -85,17 +86,6 @@ app.get("/books/:id", async (req, res) => {
 
 // POST routes
 
-// app.post('/users', async (req, res) => {
-//     const { username, hashed_password, email, first_name, last_name } = req.body
-//     try {
-//         const newUser = await pool.query('INSERT INTO users (username, hashed_password, email, first_name, last_name) VALUES ($1, $2, $3, $4, $5) RETURNING *', [username, hashed_password, email, first_name, last_name])
-//         res.status(201).json(newUser.rows[0])
-//     } catch (err) {
-//         console.error(err)
-//         res.status(500).send('User creation server error')
-//     }
-// })
-
 app.post("/books", async (req, res) => {
   const { userId, title, author, description, genre, total_pages, pages_read } =
     req.body;
@@ -145,7 +135,10 @@ app.post("/login", async (req, res) => {
   try {
     const result = await checkUser(username, password);
     if (result !== null) {
-      res.status(200).json(result)
+
+      const token = jwt.sign( {userid: result.userid}, process.env.ACCESS_TOKEN_SECRET, {expiresIn: "1h"})
+      res.cookie('token', token, {httpOnly: true})
+      res.status(200).json({result, token})
     } else {
       res.status(400).send('Authentication issue')
     }
