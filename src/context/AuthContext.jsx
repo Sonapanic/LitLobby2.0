@@ -46,8 +46,7 @@ export const AuthProvider = ({ children }) => {
         renderUrl,
         localUrl,
         token,
-        setAuthToken,
-        storedUser
+        setAuthToken
       }}
     >
       {children}

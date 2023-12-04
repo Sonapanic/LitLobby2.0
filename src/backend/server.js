@@ -67,7 +67,7 @@ app.get("/books/:id", async (req, res) => {
   const { id } = req.params;
   try {
     const books = await pool.query(
-      "SELECT * FROM books WHERE userId = $1 ORDER BY bookId ASC",
+      "SELECT * FROM books WHERE userId = $1 ORDER BY bookId DESC",
       [id]
     );
     if (books.rowCount === 0) {

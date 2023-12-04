@@ -1,8 +1,17 @@
 import BookButton from './BookButton'
+import { useContext } from 'react';
+import DataContext from '../context/DataContext';
+import EditForm from './EditForm';
 
 
 const Book = ({ book }) => {
   const { title, author, description, total_pages, pages_read } = book;
+  const { isSelected } = useContext(DataContext)
+
+
+  if (isSelected === book) {
+    return <EditForm />
+  }
 
   return (
     <div className="flex flex-col border-softBlack border-2 p-2 mb-5 w-full h-full text-softBlack">
@@ -17,7 +26,7 @@ const Book = ({ book }) => {
         </span>
       </div>
       <div className="flex justify-between">
-        <BookButton btnText={'Edit'}/>
+        <BookButton btnText={'Edit'} book={book}/>
         <BookButton btnText={'Delete'}/>
       </div>
     </div>
