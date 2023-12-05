@@ -4,8 +4,9 @@ import SearchBar from "./SearchBar"
 
 const AddForm = () => {
     return (
-    <div className="flex justify-center mt-40">
+    <div className="flex mt-40 flex-wrap justify-center">
         <SearchBar />
+        <span className="">|  OR  |</span>
     </div>
     )
 }
