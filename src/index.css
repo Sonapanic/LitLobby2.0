@@ -2,5 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+    .searchbar-box-shadow {
+        box-shadow: 0 0 10px 0 #698D5F, 0 0 10px 0 #698D5F;
+    }
+}
 
 

@@ -10,7 +10,8 @@ module.exports = {
         softBlack: '#3c3c3c',
         warmBrown: '#4B402E',
         lightGrey: '#d6d6d6',
-        alternateBrown: '#74644b'
+        alternateBrown: '#74644b',
+        testShadow: '#698D5F'
       }
     }
   }
