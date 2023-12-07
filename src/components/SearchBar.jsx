@@ -50,7 +50,7 @@ const SearchBar = () => {
       />
       <input
         type="submit"
-        className="h-8 ml-4 mt-20 px-4 rounded-md shadow-md hover:shadow-inner hover:bg-alternateBrown duration-300 bg-warmBrown text-softWhite font-semibold"
+        className="h-8 ml-4 mt-20 px-4 cursor-pointer rounded-md shadow-md hover:shadow-inner hover:bg-alternateBrown duration-300 bg-warmBrown text-softWhite font-semibold"
       >
       </input>
       {bookList.items ? (
