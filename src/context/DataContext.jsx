@@ -6,7 +6,6 @@ const DataContext = createContext();
 export const DataProvider = ({ children }) => {
   const { currentUser, renderUrl, token } = useContext(AuthContext);
 
-  const API_KEY = 'AIzaSyC5rGuqRekbY_WJo5wWDX3oP4t7p9UNfYQ'
 
   const [books, setBooks] = useState(null);
   const [isSelected, setIsSelected] = useState(null)
@@ -38,6 +37,21 @@ export const DataProvider = ({ children }) => {
     fetchBooks();
   }, [currentUser]);
 
+
+  const addBook = async () => {
+    try {
+
+      const newBook = await fetch(`${renderUrl}/books`, {
+        method: 'post'
+      })
+
+    
+    } catch(err) {
+      console.error(err)
+    }
+  }
+
+
   return (
     <DataContext.Provider
       value={{
@@ -46,7 +60,7 @@ export const DataProvider = ({ children }) => {
         setIsSelected,
         toBeAdded,
         setToBeAdded,
-        API_KEY
+        addBook
       }}
     >
       {children}
