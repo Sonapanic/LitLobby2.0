@@ -36,12 +36,12 @@ const EditForm = ({ book }) => {
       <div className="w-full flex justify-center">
         <div className="flex flex-col text-center">
             <label>Page Count</label>
-            <input type="number" value={total_pages} onChange={changePageCount} className="bg-softWhite border-2 border-softBlack rounded-md p-1 text-xs focus:outline-none"/>
+            <input type="number" value={pageCountValue} onChange={changePageCount} className="bg-softWhite border-2 border-softBlack rounded-md p-1 text-xs focus:outline-none"/>
         </div>
         <span className="px-5 font-semibold text-lg mt-5">|</span>
         <div className="flex flex-col text-center">
             <label>Pages Read</label>
-            <input type="number" value={pagesReadValue} className="bg-softWhite border-2 border-softBlack rounded-md p-1 text-xs focus:outline-none"/>
+            <input type="number" value={pagesReadValue} onChange={changePagesRead} className="bg-softWhite border-2 border-softBlack rounded-md p-1 text-xs focus:outline-none"/>
         </div>
       </div>
       <div className="flex justify-between">
