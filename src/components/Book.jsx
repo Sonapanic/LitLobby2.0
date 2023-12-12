@@ -8,7 +8,6 @@ const Book = ({ book }) => {
   const { title, author, description, total_pages, pages_read } = book;
   const { isSelected } = useContext(DataContext)
 
-
   if (isSelected === book) {
     return <EditForm />
   }
@@ -27,7 +26,7 @@ const Book = ({ book }) => {
       </div>
       <div className="flex justify-between">
         <BookButton btnText={'Edit'} book={book}/>
-        <BookButton btnText={'Delete'}/>
+        <BookButton btnText={'Delete'} id={book.bookid}/>
       </div>
     </div>
   );

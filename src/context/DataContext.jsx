@@ -10,6 +10,7 @@ export const DataProvider = ({ children }) => {
   const [books, setBooks] = useState(null);
   const [isSelected, setIsSelected] = useState(null)
   const [toBeAdded, setToBeAdded] = useState(false)
+  const [toBeDeleted, setToBeDeleted] = useState(null)
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -35,7 +36,7 @@ export const DataProvider = ({ children }) => {
       }
     };
     fetchBooks();
-  }, [currentUser, toBeAdded]);
+  }, [currentUser, toBeAdded, toBeDeleted]);
 
 
   return (
@@ -45,7 +46,8 @@ export const DataProvider = ({ children }) => {
         isSelected, 
         setIsSelected,
         toBeAdded,
-        setToBeAdded
+        setToBeAdded,
+        setToBeDeleted
       }}
     >
       {children}

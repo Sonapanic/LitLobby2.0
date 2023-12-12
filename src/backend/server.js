@@ -74,6 +74,7 @@ app.get("/books/:id", async (req, res) => {
         .status(404)
         .send("Specified user either doesn't exist or has no books to view");
     } else {
+      console.log(books.rows)
       res.status(200).json(books.rows);
     }
   } catch (err) {

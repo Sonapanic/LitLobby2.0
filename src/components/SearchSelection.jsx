@@ -21,14 +21,14 @@ const SearchSelection = ({ book }) => {
       };
 
       await fetch(`${renderUrl}/books`, {
-        method: "post",
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(newBook),
       });
 
-      showToast(`Added ${title} to your lobby`);
+      showToast(`Added "${title}" to your lobby`);
     } catch (err) {
       console.error(err);
     }
