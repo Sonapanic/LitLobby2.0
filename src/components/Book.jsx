@@ -9,7 +9,8 @@ const Book = ({ book }) => {
   const { isSelected } = useContext(DataContext)
 
   if (isSelected === book) {
-    return <EditForm />
+    console.log(book)
+    return <EditForm book={book}/>
   }
 
   return (
