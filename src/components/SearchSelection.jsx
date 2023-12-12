@@ -1,6 +1,43 @@
+import DataContext from "../context/DataContext";
+import { useContext } from "react";
+import AuthContext from "../context/AuthContext";
+
 const SearchSelection = ({ book }) => {
+  const { showToast, currentUser, renderUrl } = useContext(AuthContext);
   const { title, description, pageCount } = book.volumeInfo;
   const author = book.volumeInfo.authors;
+  const genre = book.volumeInfo.categories;
+
+  const addBook = async () => {
+    try {
+      const newBook = {
+        userId: currentUser.userid,
+        title,
+        author: author ? author.join(", ") : "No author available",
+        genre: genre ? genre.join(", ") : "No genre information available",
+        description,
+        total_pages: pageCount,
+        pages_read: 0,
+      };
+
+      await fetch(`${renderUrl}/books`, {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newBook),
+      });
+
+      showToast(`Added ${title} to your lobby`);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  // const handleClick = () => {
+  //   addBook()
+  // }
+
   let thumbnail = "No image available";
   if (book.volumeInfo.imageLinks) {
     thumbnail = book.volumeInfo.imageLinks.smallThumbnail;
@@ -25,7 +62,7 @@ const SearchSelection = ({ book }) => {
         </p>
       </div>
       <div className="w-1/4">
-        <button className="h-8 ml-4 mt-20 px-4 rounded-md shadow-md hover:shadow-inner hover:bg-alternateBrown duration-300 bg-warmBrown text-softWhite font-semibold">
+        <button onClick={addBook} className="h-8 ml-4 mt-20 px-4 rounded-md shadow-md hover:shadow-inner hover:bg-alternateBrown duration-300 bg-warmBrown text-softWhite font-semibold">
           Select
         </button>
       </div>

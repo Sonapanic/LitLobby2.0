@@ -18,7 +18,7 @@ const Header = () => {
   }
 
   return (
-    <div className="h-20 bg-warmBrown w-screen flex items-center justify-between px-4 shadow-inner">
+    <div className="h-[7dvh] bg-warmBrown w-screen flex items-center justify-between px-4 shadow-inner">
       <div>
         <span className="text-lightGrey text-xl">
           Lit<i className="text-softWhite">Lobby</i>

@@ -10,7 +10,7 @@ const BookCards = () => {
   };
 
   return (
-    <div className="flex justify-center flex-col">
+    <div className="flex justify-center flex-col ">
       <div className="flex justify-center">
         <button
           onClick={handleAdd}
@@ -19,7 +19,7 @@ const BookCards = () => {
           Add a Book
         </button>
       </div>
-      <div className="flex items-center w-[80dvw] h-f justify-center border-2 p-2 mt-20 mb-20 flex-wrap">
+      <div className="flex items-center w-[80dvw] h-f justify-center p-2 mt-20 mb-20 flex-wrap h-[64dvh] overflow-auto">
         {books && books.length > 0 ? (
           <div className="flex items-center justify-center flex-col">
             <ul className="flex-row flex-wrap flex w-8/12">

@@ -35,21 +35,7 @@ export const DataProvider = ({ children }) => {
       }
     };
     fetchBooks();
-  }, [currentUser]);
-
-
-  const addBook = async () => {
-    try {
-
-      const newBook = await fetch(`${renderUrl}/books`, {
-        method: 'post'
-      })
-
-    
-    } catch(err) {
-      console.error(err)
-    }
-  }
+  }, [currentUser, toBeAdded]);
 
 
   return (
@@ -59,8 +45,7 @@ export const DataProvider = ({ children }) => {
         isSelected, 
         setIsSelected,
         toBeAdded,
-        setToBeAdded,
-        addBook
+        setToBeAdded
       }}
     >
       {children}
