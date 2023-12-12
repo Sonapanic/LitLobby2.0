@@ -44,9 +44,9 @@ const SearchBar = () => {
       
       <input
         onChange={handleChange}
-        className="h-8 border mt-20 border-white focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md shadow-sm"
+        className="h-8 border w-80 mt-20 border-white focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md shadow-sm"
         type="text"
-        placeholder="Search..."
+        placeholder="Search books and authors..."
       />
       <input
         type="submit"
