@@ -10,7 +10,7 @@ const BookCards = () => {
   };
 
   return (
-    <div className="flex justify-center flex-col ">
+    <div className="flex justify-center flex-col">
       <div className="flex justify-center">
         <button
           onClick={handleAdd}

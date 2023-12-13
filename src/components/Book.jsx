@@ -13,12 +13,12 @@ const Book = ({ book }) => {
   }
 
   return (
-    <div className="flex flex-col bg-lightWhite rounded-lg shadow-md p-2 mb-5 w-full h-full text-softBlack">
+    <div className="flex flex-col text-softBlack bg-lightWhite rounded-lg shadow-md p-2 mb-5 w-full h-full">
       <h1>
         <i className="text-2xl font-semibold mb-2">{title}</i>
       </h1>
-      <h2 className="text-lg font-semibold mb-2">{author}</h2>
-      <h3>Genre: {genre}</h3>
+      <h2 className="text-lg font-semibold">{author}</h2>
+      <h3 className=' mb-2 font-semibold'>{genre}</h3>
       <p className="text-sm flex-grow">{description}</p>
       <div className="flex-grow flex justify-center py-2">
         <span className="mr-5 w-full flex-grow flex justify-center">
