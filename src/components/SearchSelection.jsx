@@ -44,13 +44,14 @@ const SearchSelection = ({ book }) => {
   }
   return (
     <li className="flex w-1/2 h-80 flex-row flex-wrap border">
-      <div className="w-full text-xl pt-2">
+      <div className="w-full text-xl pt-2 mb-4">
         <h1 className="w-full text-xl">
           <i>{title}</i>
         </h1>
         <h2 className="w-full text-lg font-semibold">
           {author ? author.join(", ") : "No author available."}
         </h2>
+        <h3 className="font-semibold text-xs">Genre: {genre}</h3>
       </div>
 
       <div className="w-1/4 pl-2 flex justify-center items-center">
