@@ -187,7 +187,7 @@ const Login = () => {
       </form>
       {userCreated.isNew ? (
         <span className="text-green-500">
-          You've been successfully registered to LitLobby! Please log in to
+          You've been successfully registered to Lit-Lobby! Please log in to
           continue.
         </span>
       ) : (
@@ -204,7 +204,7 @@ const Login = () => {
     </div>
   ) : (
     <div className="flex flex-col items-center mt-20">
-      <h1>Log Into LitLobby</h1>
+      <h1>Log Into Lit-Lobby</h1>
       <button onClick={handleSignUp}>Don't have an account? Sign up!</button>
       <form onSubmit={handleLoginSubmit} className="w-full max-w-xs mt-12">
         <div className="mb-4">
