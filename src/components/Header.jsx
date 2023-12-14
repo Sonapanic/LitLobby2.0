@@ -21,7 +21,7 @@ const Header = () => {
     <div className="h-[7dvh] bg-warmBrown w-screen flex items-center justify-between px-4 shadow-inner">
       <div>
         <span className="text-lightGrey text-xl">
-          Lit<i className="text-softWhite">Lobby</i>
+          Lit<span className="text-testShadow">-</span><i className="text-softWhite">Lobby</i>
         </span>
       </div>
       {currentUser !== null && (
