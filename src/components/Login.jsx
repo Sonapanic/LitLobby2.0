@@ -29,7 +29,10 @@ const Login = () => {
     rejected: false,
   });
 
-  const isPasswordValid = userInfo.password.length >= 8;
+  const isPasswordValid =
+    userInfo.password.length >= 8
+  
+  const doPasswordsMatch = userInfo.password === confirmPass
 
   const clearForm = () => {
     setUserInfo({
@@ -60,11 +63,15 @@ const Login = () => {
     };
 
     try {
-      await fetch(`${renderUrl}/register`, options);
-      clearForm();
-      handleSignUp();
-      setUserCreated({ ...userCreated, isNew: true, rejected: false });
-      showToast("Account created! Please log in.");
+      if (isPasswordValid) {
+        await fetch(`${renderUrl}/register`, options);
+        clearForm();
+        handleSignUp();
+        setUserCreated({ ...userCreated, isNew: true, rejected: false });
+        showToast("Account created! Please log in.");
+      } else {
+        
+      }
     } catch (err) {
       console.error("Couldn't sign up");
       setUserCreated({ ...userCreated, isNew: false, rejected: true });
@@ -137,7 +144,26 @@ const Login = () => {
             {isPasswordValid ? (
               <span></span>
             ) : (
-              <span className="w-1/2">Should contain at least 8 characters</span>
+              <span className="w-1/2 font-semibold">
+                Should contain at least 8 characters
+              </span>
+            )}
+          </div>
+          <div className="mb-4">
+            <label className="block mb-2">Confirm Password</label>
+            <input
+              type="password"
+              name="confirmPass"
+              value={confirmPass}
+              onChange={changeConfirm}
+              className="border border-gray-300 p-1 w-full"
+            />
+            {doPasswordsMatch ? (
+              <span></span>
+            ) : (
+              <span className="w-1/2 font-semibold">
+                Passwords do not match
+              </span>
             )}
           </div>
           <div className="mb-4">
@@ -174,22 +200,24 @@ const Login = () => {
             />
           </div>
           <div className="w-full flex justify-between">
-          {isPasswordValid ? (
-            <input
-              type="submit"
-              className="bg-gray-200 p-2 cursor-pointer"
-              value="Submit"
-              onSubmit={handleAccountSubmit}
-            />
-          ) : (
-            <button className="bg-blue-200 p-2 cursor-pointer w-20">Submit</button>
-          )}
-          <button
-            onClick={handleSignUp}
-            className="bg-gray-200 p-2 cursor-pointer"
-          >
-            Back to Login
-          </button>
+            {isPasswordValid ? (
+              <input
+                type="submit"
+                className="bg-warmBrown hover:bg-alternateBrown text-softWhite font-semibold py-2 px-4 rounded-md shadow-md hover:shadow-inner duration-300 cursor-pointer"
+                value="Submit"
+                onSubmit={handleAccountSubmit}
+              />
+            ) : (
+              <button className="bg-warmBrown hover:bg-alternateBrown text-softWhite font-semibold py-2 px-4 rounded-md shadow-md hover:shadow-inner duration-300 cursor-pointer">
+                Submit
+              </button>
+            )}
+            <button
+              onClick={handleSignUp}
+              className="bg-warmBrown hover:bg-alternateBrown text-softWhite font-semibold py-2 px-4 rounded-md shadow-md hover:shadow-inner duration-300 cursor-pointer"
+            >
+              Back to Login
+            </button>
           </div>
         </form>
       </div>
@@ -197,7 +225,14 @@ const Login = () => {
   ) : (
     <div className="flex flex-col items-center mt-20">
       <h1>Log Into Lit-Lobby</h1>
-      <button onClick={handleSignUp}>Don't have an account? Sign up!</button>
+      <span>
+        Don't have an account?{" "}
+        {
+          <button onClick={handleSignUp} className="text-testShadow underline">
+            Sign up!
+          </button>
+        }
+      </span>
       <form onSubmit={handleLoginSubmit} className="w-full max-w-xs mt-12">
         <div className="mb-4">
           <label className="block mb-2">Username</label>
@@ -207,6 +242,7 @@ const Login = () => {
             name="username"
             value={userInfo.username}
             onChange={handleChange}
+            required
           />
         </div>
         <div className="mb-4">
@@ -217,11 +253,12 @@ const Login = () => {
             name="password"
             value={userInfo.password}
             onChange={handleChange}
+            required
           />
         </div>
         <input
           type="submit"
-          className="bg-gray-200 p-2 cursor-pointer"
+          className="bg-warmBrown hover:bg-alternateBrown text-softWhite font-semibold py-2 px-4 rounded-md shadow-md hover:shadow-inner duration-300 cursor-pointer mt-2"
           value="Submit"
         />
       </form>
