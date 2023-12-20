@@ -19,7 +19,7 @@ const Header = () => {
       </div>
       {currentUser !== null && (
         <div className="flex items-center justify-center">
-          <span className="text-xl text-lightGrey text-center">
+          <span className="text-2xl text-lightGrey text-center">
             {currentUser.first_name}'s Lobby
           </span>
         </div>
