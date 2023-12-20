@@ -29,10 +29,9 @@ const Login = () => {
     rejected: false,
   });
 
-  const isPasswordValid =
-    userInfo.password.length >= 8
-  
-  const doPasswordsMatch = userInfo.password === confirmPass
+  const isPasswordValid = userInfo.password.length >= 8;
+
+  const doPasswordsMatch = userInfo.password === confirmPass;
 
   const clearForm = () => {
     setUserInfo({
@@ -70,7 +69,6 @@ const Login = () => {
         setUserCreated({ ...userCreated, isNew: true, rejected: false });
         showToast("Account created! Please log in.");
       } else {
-        
       }
     } catch (err) {
       console.error("Couldn't sign up");
@@ -124,7 +122,7 @@ const Login = () => {
             <label className="block mb-2">Username</label>
             <input
               type="text"
-              className="border border-gray-300 p-1 w-full"
+              className="h-8 border border-white focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md shadow-sm w-full"
               name="username"
               value={userInfo.username}
               onChange={handleChange}
@@ -135,7 +133,7 @@ const Login = () => {
             <label className="block mb-2">Password</label>
             <input
               type="password"
-              className="border border-gray-300 p-1 w-full"
+              className="h-8 border border-white focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md shadow-sm w-full"
               name="password"
               value={userInfo.password}
               onChange={handleChange}
@@ -156,7 +154,7 @@ const Login = () => {
               name="confirmPass"
               value={confirmPass}
               onChange={changeConfirm}
-              className="border border-gray-300 p-1 w-full"
+              className="h-8 border border-white focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md shadow-sm w-full"
             />
             {doPasswordsMatch ? (
               <span></span>
@@ -170,7 +168,7 @@ const Login = () => {
             <label className="block mb-2">Email</label>
             <input
               type="email"
-              className="border border-gray-300 p-1 w-full"
+              className="h-8 border border-white focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md shadow-sm w-full"
               name="email"
               value={userInfo.email}
               onChange={handleChange}
@@ -181,7 +179,7 @@ const Login = () => {
             <label className="block mb-2">First Name</label>
             <input
               type="text"
-              className="border border-gray-300 p-1 w-full"
+              className="h-8 border border-white focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md shadow-sm w-full"
               name="first_name"
               value={userInfo.first_name}
               onChange={handleChange}
@@ -192,7 +190,7 @@ const Login = () => {
             <label className="block mb-2">Last Name</label>
             <input
               type="text"
-              className="border border-gray-300 p-1 w-full"
+              className="h-8 border border-white focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md shadow-sm w-full"
               name="last_name"
               value={userInfo.last_name}
               onChange={handleChange}
@@ -223,7 +221,7 @@ const Login = () => {
       </div>
     </div>
   ) : (
-    <div className="flex flex-col items-center mt-20">
+    <div className="flex flex-col items-center mt-40 h-[30dvh] p-4 rounded-lg">
       <h1>Log Into Lit-Lobby</h1>
       <span>
         Don't have an account?{" "}
@@ -233,12 +231,15 @@ const Login = () => {
           </button>
         }
       </span>
-      <form onSubmit={handleLoginSubmit} className="w-full max-w-xs mt-12">
+      <form
+        onSubmit={handleLoginSubmit}
+        className="w-full max-w-xs mt-12 flex justify-center flex-col"
+      >
         <div className="mb-4">
           <label className="block mb-2">Username</label>
           <input
             type="text"
-            className="border border-gray-300 p-1 w-full"
+            className="h-8 border border-white focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md shadow-sm w-full"
             name="username"
             value={userInfo.username}
             onChange={handleChange}
@@ -249,18 +250,20 @@ const Login = () => {
           <label className="block mb-2">Password</label>
           <input
             type="password"
-            className="border border-gray-300 p-1 w-full"
+            className="h-8 border border-white focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md shadow-sm w-full"
             name="password"
             value={userInfo.password}
             onChange={handleChange}
             required
           />
         </div>
-        <input
-          type="submit"
-          className="bg-warmBrown hover:bg-alternateBrown text-softWhite font-semibold py-2 px-4 rounded-md shadow-md hover:shadow-inner duration-300 cursor-pointer mt-2"
-          value="Submit"
-        />
+        <div className="flex justify-start w-full">
+          <input
+            type="submit"
+            className="w-1/2 bg-warmBrown hover:bg-alternateBrown text-softWhite font-semibold py-2 px-4 rounded-md shadow-md hover:shadow-inner duration-300 cursor-pointer mt-2"
+            value="Log In"
+          />
+        </div>
       </form>
     </div>
   );

@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <div className="h-[7dvh] bg-warmBrown w-screen flex items-center justify-between px-4 shadow-inner">
       <div>
-        <span className="text-lightGrey text-xl">
+        <span className="text-lightGrey text-3xl">
           Lit<span className="text-testShadow">-</span>
           <i className="text-softWhite">Lobby</i>
         </span>
