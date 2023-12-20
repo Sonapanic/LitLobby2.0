@@ -4,7 +4,11 @@
 
 
 const Footer = () => {
-    return <>footer</>
+    return (
+        <div className="flex w-full h-[12dvh] bg-gray-200 shadow-inner">
+            
+        </div>
+    )
 }
 
 
