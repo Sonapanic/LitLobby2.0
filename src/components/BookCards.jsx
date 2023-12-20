@@ -14,7 +14,7 @@ const BookCards = () => {
       <div className="flex justify-center mt-5 mb-6">
         <button
           onClick={handleAdd}
-          className="py-2 px-4 rounded-md shadow-md hover:shadow-inner hover:bg-alternateBrown duration-300 bg-warmBrown text-softWhite font-semibold"
+          className="py-2 px-4 rounded-md shadow-md bg-midBrown hover:shadow-inner hover:bg-warmBrown duration-300 text-softWhite font-semibold"
         >
           Add a Book
         </button>

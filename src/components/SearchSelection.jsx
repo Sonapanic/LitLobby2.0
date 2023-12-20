@@ -54,7 +54,7 @@ const SearchSelection = ({ book }) => {
         <h3 className="font-semibold text-xs">Genre: {genre}</h3>
       </div>
 
-      <div className="w-1/4 pl-2 flex justify-center items-center">
+      <div className="w-[7dvw] pl-2 flex justify-center items-center">
         <img src={thumbnail} className="h-[13dvh] w-[4dvw]" />
       </div>
       <div className="w-1/2 flex justify-center items-center">
@@ -63,7 +63,7 @@ const SearchSelection = ({ book }) => {
         </p>
       </div>
       <div className="ml-4">
-        <button onClick={addBook} className="h-8 px-4 mt-20 rounded-md shadow-md hover:shadow-inner hover:bg-alternateBrown duration-300 bg-warmBrown text-softWhite font-semibold">
+        <button onClick={addBook} className="h-8 px-4 mt-20 rounded-md shadow-md hover:shadow-inner hover:bg-warmBrown duration-300 bg-midBrown text-softWhite font-semibold">
           Select
         </button>
       </div>

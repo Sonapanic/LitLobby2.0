@@ -55,13 +55,13 @@ const SearchBar = () => {
           />
           <input
             type="submit"
-            className="h-8 ml-4 px-4 cursor-pointer rounded-md shadow-md hover:shadow-inner hover:bg-alternateBrown duration-300 bg-warmBrown text-softWhite font-semibold"
+            className="h-8 ml-4 px-4 cursor-pointer rounded-md shadow-md hover:shadow-inner hover:bg-warmBrown duration-300 bg-midBrown text-softWhite font-semibold"
           ></input>
         </div>
 
         {bookList.items ? (
           <div className="justify-center flex-grow flex text-center">
-            <ul className="overflow-auto flex-grow border-box border border-softBlack flex-wrap flex h-[75dvh] w-[30dvw]">
+            <ul className="overflow-auto flex-grow addForm-box-shadow flex-wrap flex h-[65dvh] w-[30dvw]">
               {bookList.items.map((book, index) => {
                 return <SearchSelection key={index} book={book} />;
               })}

@@ -11,10 +11,11 @@ module.exports = {
         softBlack: '#3c3c3c',
         warmBrown: '#4B402E',
         darkBrown: '#2d261b',
-        viaBrown: '#3c3324',
+        viaBrown: '#342c20',
         lightGrey: '#d6d6d6',
         alternateBrown: '#74644b',
-        testShadow: '#698D5F'
+        testShadow: '#698D5F',
+        midBrown: '#3c3324'
       } ,
       fontFamily: {
         book: ['Gentium Book Plus', 'serif'],

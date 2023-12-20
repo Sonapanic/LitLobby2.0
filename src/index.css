@@ -6,6 +6,9 @@
     .searchbar-box-shadow {
         box-shadow: 0 0 10px 0 #698D5F, 0 0 10px 0 #698D5F;
     }
+    .addForm-box-shadow {
+        box-shadow: 0 0 8px 0 #bcbcbc, 0 0 8px 0 #bcbcbc;
+    }
 }
 
 

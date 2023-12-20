@@ -27,7 +27,7 @@ const BookButton = ({ btnText, book, id }) => {
   return (
     <button
       onClick={btnText === "Edit" ? handleEdit : handleDelete}
-      className="font-montserrat bg-warmBrown hover:bg-alternateBrown text-softWhite font-semibold py-2 px-4 rounded-md shadow-md hover:shadow-inner duration-300"
+      className="font-montserrat bg-midBrown hover:bg-warmBrown text-softWhite font-semibold py-2 px-4 rounded-md shadow-md hover:shadow-inner duration-300"
     >
       {btnText}
     </button>
