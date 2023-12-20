@@ -72,7 +72,7 @@ const EditForm = ({ book }) => {
         <textarea
           onChange={changeDescription}
           value={descriptionValue}
-          className="border-2 mb-4 rounded-md focus:outline-none border-softBlack text-sm resize-none p-2 w-[20dvw] h-[20dvh]"
+          className="border-2 mb-4 rounded-md font-book focus:outline-none border-softBlack text-sm resize-none p-2 w-[20dvw] h-[20dvh]"
         />
       </div>
       <div className="w-full flex justify-center">

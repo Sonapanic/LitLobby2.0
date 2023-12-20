@@ -114,7 +114,7 @@ const Login = () => {
   };
 
   return newUser ? (
-    <div className="flex flex-col items-center w-[25dvh]">
+    <div className="flex flex-col items-center text-lg w-[25dvh]">
       <h2 className="mb-4 mt-20">Please enter the following information:</h2>
       <div className="w-full flex justify-center">
         <form onSubmit={handleAccountSubmit} className="w-full flex flex-col ">
@@ -201,18 +201,18 @@ const Login = () => {
             {isPasswordValid ? (
               <input
                 type="submit"
-                className="bg-warmBrown hover:bg-alternateBrown text-softWhite font-semibold py-2 px-4 rounded-md shadow-md hover:shadow-inner duration-300 cursor-pointer"
+                className="bg-midBrown hover:bg-warmBrown text-softWhite font-semibold py-2 px-4 rounded-md shadow-md hover:shadow-inner duration-300 cursor-pointer"
                 value="Submit"
                 onSubmit={handleAccountSubmit}
               />
             ) : (
-              <button className="bg-warmBrown hover:bg-alternateBrown text-softWhite font-semibold py-2 px-4 rounded-md shadow-md hover:shadow-inner duration-300 cursor-pointer">
+              <button className="bg-midBrown hover:bg-warmBrown text-softWhite font-semibold py-2 px-4 rounded-md shadow-md hover:shadow-inner duration-300 cursor-pointer">
                 Submit
               </button>
             )}
             <button
               onClick={handleSignUp}
-              className="bg-warmBrown hover:bg-alternateBrown text-softWhite font-semibold py-2 px-4 rounded-md shadow-md hover:shadow-inner duration-300 cursor-pointer"
+              className="bg-midBrown hover:bg-warmBrown text-softWhite font-semibold py-2 px-4 rounded-md shadow-md hover:shadow-inner duration-300 cursor-pointer"
             >
               Back to Login
             </button>
@@ -221,7 +221,7 @@ const Login = () => {
       </div>
     </div>
   ) : (
-    <div className="flex flex-col items-center mt-40 h-[30dvh] p-4 rounded-lg">
+    <div className="flex flex-col items-center mt-40 h-[30dvh] text-lg p-4 rounded-lg">
       <h1>Log Into Lit-Lobby</h1>
       <span>
         Don't have an account?{" "}
