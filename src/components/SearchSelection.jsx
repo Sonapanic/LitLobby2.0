@@ -58,7 +58,7 @@ const SearchSelection = ({ book }) => {
         <img src={thumbnail} className="h-[13dvh] w-[4dvw]" />
       </div>
       <div className="w-1/2 flex justify-center items-center">
-        <p className="text-sm overflow-auto bg-softWhite border-softBlack max-h-56 mb-4 p-2">
+        <p className="text-sm overflow-auto bg-softWhite border-softBlack max-h-56 mb-4 p-2 font-book">
           {description ? description : "No description available"}
         </p>
       </div>

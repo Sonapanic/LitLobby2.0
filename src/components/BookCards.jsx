@@ -11,10 +11,10 @@ const BookCards = () => {
 
   return (
     <div className="flex justify-center flex-col">
-      <div className="flex justify-center">
+      <div className="flex justify-center mt-5 mb-6">
         <button
           onClick={handleAdd}
-          className="mt-10 py-2 px-4 rounded-md shadow-md hover:shadow-inner hover:bg-alternateBrown duration-300 bg-warmBrown text-softWhite font-semibold"
+          className="py-2 px-4 rounded-md shadow-md hover:shadow-inner hover:bg-alternateBrown duration-300 bg-warmBrown text-softWhite font-semibold"
         >
           Add a Book
         </button>
