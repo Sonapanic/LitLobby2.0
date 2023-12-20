@@ -10,7 +10,7 @@ const Header = () => {
   };
 
   return (
-    <div className="h-[7dvh] bg-warmBrown w-screen flex items-center justify-between px-4 shadow-inner">
+    <div className="font-montserrat h-[7dvh] bg-gradient-to-r from-darkBrown to-warmBrown w-screen flex items-center justify-between px-4 shadow-inner">
       <div>
         <span className="text-lightGrey text-3xl">
           Lit<span className="text-testShadow">-</span>

@@ -13,7 +13,7 @@ const Book = ({ book }) => {
   }
 
   return (
-    <div className="flex flex-col text-softBlack bg-lightWhite rounded-lg shadow-md p-2 mb-5 w-full h-full">
+    <div className="flex flex-col font-book text-softBlack bg-lightWhite rounded-lg shadow-md p-2 mb-5 w-full h-full">
       <h1>
         <i className="text-2xl font-semibold mb-2">{title}</i>
       </h1>
