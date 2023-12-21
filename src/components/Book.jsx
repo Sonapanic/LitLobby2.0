@@ -23,10 +23,10 @@ const Book = ({ book }) => {
           <h3 className=" mb-2 font-semibold">{genre}</h3>
         </div>
         <div className="w-[7dvw] pl-2 flex justify-center items-center">
-            <img src={thumbnail} className="h-[13dvh] w-[4dvw]" />
+          {thumbnail === '' || thumbnail === null ? <span>No image avialable.</span> : <img src={thumbnail} className="rounded-sm shadow-md h-40 w-30" />}
+            {/*  */}
         </div>
       </div>
-
       <p className=" flex-grow font-book">{description}</p>
       <div className="flex-grow flex justify-center py-2">
         <span className="mr-5 w-full flex-grow flex justify-center font-semibold">
