@@ -8,7 +8,7 @@ module.exports = {
       colors: {
         softWhite: '#f3f3f3',
         lightWhite: '#fdfdfd',
-        softBlack: '#3c3c3c',
+        softBlack: '#333333',
         warmBrown: '#4B402E',
         darkBrown: '#2d261b',
         viaBrown: '#342c20',

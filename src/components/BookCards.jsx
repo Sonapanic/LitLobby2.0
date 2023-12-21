@@ -19,7 +19,7 @@ const BookCards = () => {
           Add a Book
         </button>
       </div>
-      <div className="flex items-center w-[80dvw] h-f justify-center p-2 mb-20 flex-wrap h-[64dvh] overflow-auto">
+      <div className="flex items-center w-[70dvw] h-f justify-center p-2 mb-20 flex-wrap h-[64dvh] overflow-auto">
         {books && books.length > 0 ? (
           <div className="flex items-center justify-center flex-col">
             <ul className="flex-row flex-wrap flex w-8/12">

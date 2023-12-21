@@ -8,6 +8,13 @@ const SearchSelection = ({ book }) => {
   const author = book.volumeInfo.authors;
   const genre = book.volumeInfo.categories;
 
+  const thumbnailPresent = book.volumeInfo.imageLinks;
+  let thumbnail = "No image available.";
+  if (thumbnailPresent) {
+    thumbnail = book.volumeInfo.imageLinks.smallThumbnail;
+  }
+
+
   const addBook = async () => {
     try {
       const newBook = {
@@ -15,6 +22,7 @@ const SearchSelection = ({ book }) => {
         title,
         author: author ? author.join(", ") : "No author available",
         genre: genre ? genre.join(", ") : "No genre information available",
+        thumbnail,
         description,
         total_pages: pageCount,
         pages_read: 0,
@@ -38,12 +46,8 @@ const SearchSelection = ({ book }) => {
   //   addBook()
   // }
 
-  let thumbnail = "No image available";
-  if (book.volumeInfo.imageLinks) {
-    thumbnail = book.volumeInfo.imageLinks.smallThumbnail;
-  }
   return (
-    <li className="flex w-1/2 h-80 flex-grow flex-row flex-wrap border">
+    <li className="flex w-1/2 h-80 flex-grow flex-row flex-wrap border items-center">
       <div className="w-full text-xl pt-2">
         <h1 className="w-full text-xl">
           <i>{title}</i>
@@ -55,7 +59,11 @@ const SearchSelection = ({ book }) => {
       </div>
 
       <div className="w-[7dvw] pl-2 flex justify-center items-center">
-        <img src={thumbnail} className="h-[13dvh] w-[4dvw]" />
+        {thumbnailPresent ? (
+          <img src={thumbnail} className="h-[13dvh] w-[4dvw]" />
+        ) : (
+          <span>{thumbnail}</span>
+        )}
       </div>
       <div className="w-1/2 flex justify-center items-center">
         <p className="text-sm overflow-auto bg-softWhite border-softBlack max-h-56 mb-4 p-2 font-book">
@@ -63,7 +71,10 @@ const SearchSelection = ({ book }) => {
         </p>
       </div>
       <div className="ml-4">
-        <button onClick={addBook} className="h-8 px-4 mt-20 rounded-md shadow-md hover:shadow-inner hover:bg-warmBrown duration-300 bg-midBrown text-softWhite font-semibold">
+        <button
+          onClick={addBook}
+          className="h-8 px-4 rounded-md shadow-md hover:shadow-inner hover:bg-warmBrown duration-300 bg-midBrown text-softWhite font-semibold"
+        >
           Select
         </button>
       </div>

@@ -18,6 +18,7 @@ CREATE TABLE books (
     author TEXT,
     description TEXT,
     genre TEXT,
+    thumbnail TEXT,
     total_pages INTEGER, 
     pages_read INTEGER,
     FOREIGN KEY (userId) REFERENCES users(userId) ON UPDATE CASCADE ON DELETE CASCADE

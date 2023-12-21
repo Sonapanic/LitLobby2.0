@@ -86,12 +86,13 @@ app.get("/books/:id", async (req, res) => {
 // POST routes
 
 app.post("/books", async (req, res) => {
-  const { userId, title, author, description, genre, total_pages, pages_read } =
+  const { userId, title, author, description, genre, thumbnail, total_pages, pages_read } =
     req.body;
   try {
+    console.log(thumbnail)
     const newBook = await pool.query(
-      "INSERT INTO books (userId, title, author, description, genre, total_pages, pages_read) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *",
-      [userId, title, author, description, genre, total_pages, pages_read]
+      "INSERT INTO books (userId, title, author, description, genre, thumbnail, total_pages, pages_read) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *",
+      [userId, title, author, description, genre, thumbnail, total_pages, pages_read]
     );
     if (newBook.rowCount === 0) {
       res
