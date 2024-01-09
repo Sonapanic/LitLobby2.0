@@ -1,30 +1,19 @@
-import { useContext } from "react"
-import AuthContext from "../context/AuthContext"
-import BookCards from './BookCards'
-import DataContext from "../context/DataContext"
-import AddForm from './AddForm'
-
+import { useContext } from "react";
+import AuthContext from "../context/AuthContext";
+import BookCards from "./BookCards";
+import DataContext from "../context/DataContext";
+import { Link } from 'react-router-dom'
 
 const Dashboard = () => {
-    const { toBeAdded } = useContext(DataContext)
-    const { currentUser } = useContext(AuthContext)
-    const { id, username, email, first_name, last_name } = currentUser
 
-    if(toBeAdded) {
-        return <AddForm />
-    }
+  return (
+    <div className="w-20">
+       <Link to={'lobby'}>View Your Lobby</Link>
+    </div>
+  )
+};
 
-    return <BookCards />
-
-    
-}
+export default Dashboard;
 
 
 
-
-
-
-
-
-
-export default Dashboard

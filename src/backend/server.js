@@ -74,7 +74,6 @@ app.get("/books/:id", async (req, res) => {
         .status(404)
         .send("Specified user either doesn't exist or has no books to view");
     } else {
-      console.log(books.rows)
       res.status(200).json(books.rows);
     }
   } catch (err) {
@@ -89,7 +88,6 @@ app.post("/books", async (req, res) => {
   const { userId, title, author, description, genre, thumbnail, total_pages, pages_read } =
     req.body;
   try {
-    console.log(thumbnail)
     const newBook = await pool.query(
       "INSERT INTO books (userId, title, author, description, genre, thumbnail, total_pages, pages_read) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *",
       [userId, title, author, description, genre, thumbnail, total_pages, pages_read]
