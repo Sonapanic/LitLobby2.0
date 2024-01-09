@@ -16,6 +16,9 @@ const Header = () => {
           Lit<span className="text-testShadow">-</span>
           <i className="text-softWhite">Lobby</i>
         </span>
+        <div>
+          <span className="text-lightGrey">INDEV V.1.0</span>
+        </div>
       </div>
       {currentUser !== null && (
         <div className="flex items-center justify-center">

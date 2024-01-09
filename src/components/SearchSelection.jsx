@@ -43,9 +43,6 @@ const SearchSelection = ({ book }) => {
     }
   };
 
-  // const handleClick = () => {
-  //   addBook()
-  // }
 
   return (
     <li className="flex w-1/2 h-[30dvh] flex-grow flex-row flex-wrap items-center overflow-auto">
