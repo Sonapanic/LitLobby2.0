@@ -20,6 +20,12 @@ Lit-Lobby is a full stack web application for keeping track of your favorite rea
 - [`Bcrypt`](https://www.npmjs.com/package/bcrypt) - Outrageously secure password encryption.
 - [`Toastify`](https://www.npmjs.com/package/react-toastify) - Fun, informative pop-ups.
 
+## Roadmap
+- Libraries - User defined libraries for sorting books
+- Implementing React Router - Updating the site to reflect SPA principles
+- Friends - Add people you know to your friends list
+- Book Clubs - Shared notes for selected book, email reminders, and much more
+
 - - - -
 
 ## Images
