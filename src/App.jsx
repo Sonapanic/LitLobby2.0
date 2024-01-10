@@ -10,22 +10,36 @@ import "./index.css";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
-  const { currentUser, setCurrentUser } = useContext(AuthContext);
+  const { currentUser } = useContext(AuthContext);
 
   return (
-    <div className="flex flex-col justify-between font-montserrat h-[100dvh] w-[100dvw] bg-softWhite">
+    <div className="flex flex-col justify-between font-montserrat h-[100dvh] w-[100dvw] bg-softWhite overflow-hidden">
       <div>
         <ToastContainer />
         <Header />
       </div>
       <div
-        className={currentUser ? "flex justify-start" : "flex justify-center"}
+        className={
+          currentUser ? "flex h-[70dvh]" : "flex justify-center mb-96"
+        }
       >
-        {currentUser ? <Dashboard /> : <Login />}
+        {currentUser ? (
+          <div className="flex w-full">
+            <div className="flex w-[17dvw] border mr-20 justify-center">
+              <Dashboard />
+            </div>
+            <div className="flex justify-center w-full border border-black mr-10">
+              <Outlet />
+            </div>
+          </div>
+        ) : (
+          <Login />
+        )}
       </div>
-      <div id="detail" className="flex justify-center">
+      {/* <div id="detail" className="flex justify-center">
         <Outlet />
-      </div>
+      </div> */}
+
       <Footer />
     </div>
   );
