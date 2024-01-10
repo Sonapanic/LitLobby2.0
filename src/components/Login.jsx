@@ -114,7 +114,7 @@ const Login = () => {
   };
 
   return newUser ? (
-    <div className="flex flex-col items-center text-lg w-[25dvh]">
+    <div className="flex flex-col items-center text-lg w-[25dvh] h-full">
       <h2 className="mb-4 mt-20">Please enter the following information:</h2>
       <div className="w-full flex justify-center">
         <form onSubmit={handleAccountSubmit} className="w-full flex flex-col ">

@@ -19,16 +19,14 @@ function App() {
         <Header />
       </div>
       <div
-        className={
-          currentUser ? "flex h-[70dvh]" : "flex justify-center mb-96"
-        }
+        className={currentUser ? "flex h-[70dvh]" : "flex justify-center mb-64"}
       >
         {currentUser ? (
           <div className="flex w-full">
             <div className="flex w-[17dvw] border mr-20 justify-center">
               <Dashboard />
             </div>
-            <div className="flex justify-center w-full border border-black mr-10">
+            <div className="flex justify-center w-full mr-10">
               <Outlet />
             </div>
           </div>

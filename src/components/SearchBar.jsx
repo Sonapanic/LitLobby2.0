@@ -36,7 +36,7 @@ const SearchBar = () => {
 
   return (
     <div className="flex flex-col flex-wrap">
-      <div className="w-full flex justify-center h-[5dvh] mb-2">
+      <div className="w-full flex justify-center h-[5dvh]">
           <button className="text-testShadow underline" onClick={handleBack}>
             Back
           </button>
@@ -61,7 +61,7 @@ const SearchBar = () => {
 
         {bookList.items ? (
           <div className="justify-center flex-grow flex text-center">
-            <ul className="overflow-auto flex-grow addForm-box-shadow flex-wrap flex h-[65dvh] w-[30dvw] p-5">
+            <ul className="overflow-auto flex-grow addForm-box-shadow flex-wrap flex h-[55dvh] w-[40dvw] p-5">
               {bookList.items.map((book, index) => {
                 return <SearchSelection key={index} book={book} />;
               })}
