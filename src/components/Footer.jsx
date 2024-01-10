@@ -5,7 +5,7 @@
 
 const Footer = () => {
     return (
-        <div className="flex w-full h-[12dvh] bg-gray-200 shadow-inner">
+        <div className="flex w-[100dvw] h-[12dvh] bg-gray-200 shadow-inner">
             
         </div>
     )

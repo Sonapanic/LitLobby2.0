@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 const Dashboard = () => {
 
   return (
-    <div className="w-20">
+    <div className="w-20 bg-green-200">
        <Link to={'lobby'}>View Your Lobby</Link>
     </div>
   )

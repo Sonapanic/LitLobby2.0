@@ -1,5 +1,6 @@
 import AuthContext from "../context/AuthContext";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const { currentUser, setCurrentUser } = useContext(AuthContext);
@@ -29,12 +30,12 @@ const Header = () => {
       )}
       <div className="flex items-center justify-end">
         {currentUser !== null && (
-          <button
+          <Link to={''}
             onClick={signOut}
             className="ml-4 bg-alternateBrown hover:bg-lightGrey hover:text-softBlack text-lightGrey font-semibold py-2 px-4 rounded-md shadow-md hover:shadow-inner duration-300"
           >
             Sign Out
-          </button>
+          </Link>
         )}
       </div>
     </div>
