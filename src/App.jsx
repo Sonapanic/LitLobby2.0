@@ -8,12 +8,13 @@ import AuthContext from "./context/AuthContext";
 import { ToastContainer } from "react-toastify";
 import "./index.css";
 import "react-toastify/dist/ReactToastify.css";
+import PermanentDrawerLeft from "./components/PermanentDrawerLeft";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
 
   return (
-    <div className="flex flex-col justify-between font-montserrat h-[100dvh] w-[100dvw] bg-softWhite overflow-hidden">
+    <div className="flex flex-col justify-between font-Roboto h-[100dvh] w-[100dvw] bg-softWhite overflow-hidden">
       <div>
         <ToastContainer />
         <Header />
@@ -34,10 +35,6 @@ function App() {
           <Login />
         )}
       </div>
-      {/* <div id="detail" className="flex justify-center">
-        <Outlet />
-      </div> */}
-
       <Footer />
     </div>
   );
