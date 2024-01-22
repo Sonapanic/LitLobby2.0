@@ -49,7 +49,7 @@ const SearchBar = () => {
         <div className="w-full flex justify-center">
           <input
             onChange={handleChange}
-            className="mb-7 h-8 border w-80 border-white focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md shadow-sm"
+            className="mb-7 h-8 border bg-softWhite w-80 focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md"
             type="text"
             placeholder="Search books and authors..."
           />
@@ -61,7 +61,7 @@ const SearchBar = () => {
 
         {bookList.items ? (
           <div className="justify-center flex-grow flex text-center">
-            <ul className="overflow-auto flex-grow addForm-box-shadow flex-wrap flex h-[55dvh] w-[40dvw] p-5">
+            <ul className="overflow-auto flex-grow addForm-box-shadow flex-wrap flex h-[65dvh] w-[40dvw] p-5">
               {bookList.items.map((book, index) => {
                 return <SearchSelection key={index} book={book} />;
               })}

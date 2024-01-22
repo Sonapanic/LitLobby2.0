@@ -122,7 +122,7 @@ const Login = () => {
             <label className="block mb-2">Username</label>
             <input
               type="text"
-              className="h-8 border border-white focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md shadow-sm w-full"
+              className="h-8 border focus:border-testShadow bg-softWhite focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md w-full"
               name="username"
               value={userInfo.username}
               onChange={handleChange}
@@ -133,7 +133,7 @@ const Login = () => {
             <label className="block mb-2">Password</label>
             <input
               type="password"
-              className="h-8 border border-white focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md shadow-sm w-full"
+              className="h-8 border bg-softWhite focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md  w-full"
               name="password"
               value={userInfo.password}
               onChange={handleChange}
@@ -154,7 +154,7 @@ const Login = () => {
               name="confirmPass"
               value={confirmPass}
               onChange={changeConfirm}
-              className="h-8 border border-white focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md shadow-sm w-full"
+              className="h-8 border bg-softWhite focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md w-full"
             />
             {doPasswordsMatch ? (
               <span></span>
@@ -168,7 +168,7 @@ const Login = () => {
             <label className="block mb-2">Email</label>
             <input
               type="email"
-              className="h-8 border border-white focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md shadow-sm w-full"
+              className="h-8 border bg-softWhite focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md  w-full"
               name="email"
               value={userInfo.email}
               onChange={handleChange}
@@ -179,7 +179,7 @@ const Login = () => {
             <label className="block mb-2">First Name</label>
             <input
               type="text"
-              className="h-8 border border-white focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md shadow-sm w-full"
+              className="h-8 border bg-softWhite focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md  w-full"
               name="first_name"
               value={userInfo.first_name}
               onChange={handleChange}
@@ -190,7 +190,7 @@ const Login = () => {
             <label className="block mb-2">Last Name</label>
             <input
               type="text"
-              className="h-8 border border-white focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md shadow-sm w-full"
+              className="h-8 border bg-softWhite focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md  w-full"
               name="last_name"
               value={userInfo.last_name}
               onChange={handleChange}
@@ -239,7 +239,7 @@ const Login = () => {
           <label className="block mb-2">Username</label>
           <input
             type="text"
-            className="h-8 border border-white focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md shadow-sm w-full"
+            className="h-8 border bg-softWhite focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md  w-full"
             name="username"
             value={userInfo.username}
             onChange={handleChange}
@@ -250,7 +250,7 @@ const Login = () => {
           <label className="block mb-2">Password</label>
           <input
             type="password"
-            className="h-8 border border-white focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md shadow-sm w-full"
+            className="h-8 border bg-softWhite focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md  w-full"
             name="password"
             value={userInfo.password}
             onChange={handleChange}

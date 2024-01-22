@@ -14,20 +14,20 @@ function App() {
   const { currentUser } = useContext(AuthContext);
 
   return (
-    <div className="flex flex-col justify-between font-Roboto h-[100dvh] w-[100dvw] bg-softWhite overflow-hidden">
+    <div className="flex flex-col justify-between font-Roboto h-[100dvh] w-[100dvw] bg-lighttWhite overflow-hidden">
       <div>
         <ToastContainer />
         <Header />
       </div>
       <div
-        className={currentUser ? "flex h-[70dvh]" : "flex justify-center mb-64"}
+        className={currentUser ? "flex h-[81dvh]" : "flex justify-center mb-64"}
       >
         {currentUser ? (
           <div className="flex w-full">
-            <div className="flex w-[17dvw] border mr-20 justify-center">
+            <div className="flex w-[10dvw] border mr-20 justify-center">
               <Dashboard />
             </div>
-            <div className="flex justify-center w-full mr-10">
+            <div className="flex justify-center w-full mr-64">
               <Outlet />
             </div>
           </div>
