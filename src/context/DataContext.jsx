@@ -5,6 +5,7 @@ const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
   const { currentUser, renderUrl, token } = useContext(AuthContext);
+  const bgUrl = 'https://c1.wallpaperflare.com/path/296/248/908/books-library-room-school-5131a7d71e8765edda6c070f015254bf.jpg'
 
 
   const [books, setBooks] = useState(null);
@@ -47,7 +48,8 @@ export const DataProvider = ({ children }) => {
         setIsSelected,
         toBeAdded,
         setToBeAdded,
-        setToBeDeleted
+        setToBeDeleted,
+        bgUrl
       }}
     >
       {children}

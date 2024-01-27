@@ -8,13 +8,11 @@ const SearchSelection = ({ book }) => {
   const author = book.volumeInfo.authors;
   const genre = book.volumeInfo.categories;
 
-  let thumbnail = 'No image available.'
+  let thumbnail = "No image available.";
 
   if (book.volumeInfo.imageLinks) {
-    thumbnail = book.volumeInfo.imageLinks.smallThumbnail
+    thumbnail = book.volumeInfo.imageLinks.smallThumbnail;
   }
-
-
 
   const addBook = async () => {
     try {
@@ -43,12 +41,13 @@ const SearchSelection = ({ book }) => {
     }
   };
 
-
   return (
-    <li className="flex w-1/2 h-[30dvh] flex-grow flex-row flex-wrap items-center overflow-auto">
+    <li
+      className="flex w-1/2 h-[30dvh] flex-grow flex-row flex-wrap items-center overflow-auto"
+    >
       <div className="w-full text-xl pt-2">
         <h1 className="w-full text-xl">
-          <i >{title}</i>
+          <i>{title}</i>
         </h1>
         <h2 className="w-full text-lg font-semibold">
           {author ? author.join(", ") : "No author available."}
@@ -57,10 +56,14 @@ const SearchSelection = ({ book }) => {
       </div>
 
       <div className="w-[7dvw] pl-2 flex justify-center items-center">
-        {thumbnail.length === 19 ? <span>{thumbnail}</span> : <img src={thumbnail} className="shadow-lg h-40 w-30" />}
+        {thumbnail.length === 19 ? (
+          <span>{thumbnail}</span>
+        ) : (
+          <img src={thumbnail} className="shadow-lg h-40 w-30" />
+        )}
       </div>
       <div className="w-1/2 flex justify-center items-center">
-        <p className="text-sm overflow-auto bg-softWhite border-softBlack max-h-56 mb-4 p-2 font-book">
+        <p className="text-sm overflow-auto bg-softWhite rounded-lg border-softBlack max-h-56 mb-4 p-2 font-book">
           {description ? description : "No description available"}
         </p>
       </div>

@@ -7,8 +7,6 @@ import BookCards from "./BookCards";
 const Lobby = () => {
 
     const { toBeAdded } = useContext(DataContext);
-    const { currentUser } = useContext(AuthContext);
-    // const { id, username, email, first_name, last_name } = currentUser;
   
     if (toBeAdded) {
         return <AddForm />;
