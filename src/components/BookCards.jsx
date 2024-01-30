@@ -19,10 +19,10 @@ const BookCards = () => {
           Add a Book
         </button>
       </div>
-      <div className="flex items-center w-[70dvw] h-f justify-center p-2 mb-20 flex-wrap h-[64dvh] overflow-auto">
+      <div className="flex items-center w-[40dvw] justify-center p-2 mb-20 flex-wrap h-[64dvh] overflow-auto">
         {books && books.length > 0 ? (
           <div className="flex items-center justify-center flex-col">
-            <ul className="flex-row flex-wrap flex w-8/12">
+            <ul className="flex-row flex-wrap flex ">
               {books.map((book, index) => {
                 return <Book key={index} book={book} />;
               })}
@@ -37,3 +37,6 @@ const BookCards = () => {
 };
 
 export default BookCards;
+
+
+

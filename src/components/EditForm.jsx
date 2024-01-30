@@ -97,10 +97,10 @@ const EditForm = ({ book }) => {
         </div>
       </div>
       <div className="flex justify-between p-2">
-        <button onClick={handleCancel} className="underline text-testShadow">
+        <button onClick={handleCancel} className="h-8 px-4 cursor-pointer rounded-md shadow-md hover:shadow-inner hover:bg-warmBrown duration-300 bg-midBrown text-softWhite font-semibold">
           Cancel
         </button>
-        <button onClick={handleSave} className="underline text-testShadow">
+        <button onClick={handleSave} className="h-8 px-4 cursor-pointer rounded-md shadow-md hover:shadow-inner hover:bg-warmBrown duration-300 bg-midBrown text-softWhite font-semibold">
           Save
         </button>
       </div>

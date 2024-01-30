@@ -43,7 +43,7 @@ const SearchSelection = ({ book }) => {
 
   return (
     <li
-      className="flex w-1/2 h-[30dvh] flex-grow flex-row flex-wrap items-center overflow-auto"
+      className="flex w-1/2 h-[30dvh] flex-grow flex-row flex-wrap items-center overflow-auto border"
     >
       <div className="w-full text-xl pt-2">
         <h1 className="w-full text-xl">
