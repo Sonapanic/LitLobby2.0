@@ -31,7 +31,10 @@ Lit-Lobby is a full stack web application for keeping track of your favorite rea
 ## Images
 
 
-![image](https://github.com/Sonapanic/Lit-Lobby2.0/assets/129539186/f2b83675-f3e8-476a-9383-468b476ebdc9)
-![image](https://github.com/Sonapanic/Lit-Lobby2.0/assets/129539186/0e8ff281-5c36-436a-868b-010f48e71d9f)
-![image](https://github.com/Sonapanic/Lit-Lobby2.0/assets/129539186/13d41807-0132-44d2-8116-40e5872ecf40)
+
+![image](https://github.com/Sonapanic/Lit-Lobby2.0/assets/129539186/ee884934-5d27-4001-8760-eb3cc04a1e79)
+
+![image](https://github.com/Sonapanic/Lit-Lobby2.0/assets/129539186/a722297f-1c22-4acb-ac54-d8ecfddba49b)
+![image](https://github.com/Sonapanic/Lit-Lobby2.0/assets/129539186/50cd7873-7bbf-4040-b851-c505d811e43f)
+
 
