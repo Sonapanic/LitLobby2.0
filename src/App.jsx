@@ -47,7 +47,7 @@ function App() {
         )}
         <div
           className={`${
-            currentUser ? "flex justify-center w-full mr-64" : ""
+            currentUser ? "flex justify-center w-full mr-[30dvw]" : ""
           }`}
         >
           <Outlet />
