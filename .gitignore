@@ -24,6 +24,7 @@ dist-ssr
 *.sw?
 *.sql
 
+.sql
 .env
 ./src/backend/.env
 env
