@@ -15,6 +15,8 @@ import ErrorPage from "./components/ErrorPage.jsx";
 import Dashboard from "./components/Dashboard.jsx";
 import Lobby from "./components/Lobby.jsx";
 import Login from "./components/Login.jsx";
+import About from "./components/About.jsx";
+import Contact from "./components/Contact.jsx";
 
 const {currentUser} = AuthProvider
 
@@ -32,6 +34,14 @@ const router = createBrowserRouter([
       {
         path: "/lobby",
         element: <Lobby />,
+      },
+      {
+        path:'/about',
+        element: <About />,
+      },
+      {
+        path:'/contact',
+        element: <Contact />
       },
     ],
   },

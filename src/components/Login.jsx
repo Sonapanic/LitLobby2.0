@@ -115,8 +115,7 @@ const Login = () => {
 
   return newUser ? (
     <div
-      className="flex flex-col justify-around bg-gray-200 rounded-lg text-lg w-72 p-4 h-[55dvh] mt-16"
-      style={{ backdropFilter: `blur(5px)` }}
+      className={`flex flex-col justify-around bg-gray-300 rounded-lg text-lg w-72 p-4 h-[55dvh] mt-16 ${location.pathname === '/contact' || location.pathname === '/about' ? 'hidden' : ''}`}
     >
       <h2 className="">Please enter the following information:</h2>
       <div className="w-full flex justify-center">
@@ -225,7 +224,7 @@ const Login = () => {
     </div>
   ) : (
     <div
-      className="flex flex-col items-center mt-40 h-[30dvh] bg-gray-200 text-lg p-4 rounded-lg"
+      className={`flex flex-col items-center mt-40 h-[30dvh] bg-gray-200 text-lg p-4 rounded-lg ${location.pathname === '/contact' || location.pathname === '/about' ? 'hidden' : ''}`}
       style={{ backdropFilter: `blur(5px)` }}
     >
       <h1>Log Into Lit-Lobby</h1>
