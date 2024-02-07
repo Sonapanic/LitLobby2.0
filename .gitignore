@@ -27,3 +27,6 @@ dist-ssr
 .env
 ./src/backend/.env
 env
+
+./src/backend/migration.sql
+./src/backend/seed.sql

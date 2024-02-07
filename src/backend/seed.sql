@@ -8,5 +8,3 @@ VALUES
 
 INSERT INTO books 
 
-
--- The End of Drum-Time
