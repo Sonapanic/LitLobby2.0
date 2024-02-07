@@ -115,7 +115,7 @@ const Login = () => {
 
   return newUser ? (
     <div
-      className={`flex flex-col justify-around bg-gray-300 rounded-lg text-lg w-72 p-4 h-[55dvh] mt-16 ${location.pathname === '/contact' || location.pathname === '/about' ? 'hidden' : ''}`}
+      className={`flex flex-col justify-around bg-gray-200 rounded-lg text-lg w-72 p-4 h-[55dvh] mt-16 ${location.pathname === '/contact' || location.pathname === '/about' ? 'hidden' : ''}`}
     >
       <h2 className="">Please enter the following information:</h2>
       <div className="w-full flex justify-center">

@@ -41,13 +41,17 @@ function App() {
             <div className="flex w-[10dvw] border mr-20 justify-center">
               <Dashboard />
             </div>
-            <div className="flex justify-center w-full mr-64">
-              <Outlet />
-            </div>
           </div>
         ) : (
           <Login />
         )}
+        <div
+          className={`${
+            currentUser ? "flex justify-center w-full mr-64" : ""
+          }`}
+        >
+          <Outlet />
+        </div>
       </div>
       <Footer />
     </div>

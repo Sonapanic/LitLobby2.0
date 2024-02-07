@@ -11,8 +11,8 @@ const About = () => {
 
 
     return (
-        <div>
-            
+        <div className="h-full w-full flex bg-softWhite justify-center">
+            Ayy
         </div>
     )
 
