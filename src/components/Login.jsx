@@ -116,7 +116,7 @@ const Login = () => {
   return newUser ? (
     <div
       className={`flex overflow-auto flex-col justify-between rounded-lg md:text-md mt-10 lg:text-lg w-72 p-4 h-[55dvh] ${location.pathname === '/contact' || location.pathname === '/about' ? 'hidden' : ''}`}
-      style={{ background: 'linear-gradient(to bottom right, rgba(229, 231, 235), #83755f, #74644b, #f3f3f3)' }}
+      style={{ background: 'linear-gradient(to bottom left, rgba(229, 231, 235), #83755f, #74644b, #f3f3f3)' }}
     >
       <h2 className="">Please enter the following information:</h2>
       <div className="w-full flex justify-center">
@@ -226,7 +226,7 @@ const Login = () => {
   ) : (
     <div
       className={`flex flex-col overflow-auto items-center mt-40 h-[30dvh] lg:text-lg p-4 md:text-md rounded-lg ${location.pathname === '/contact' || location.pathname === '/about' ? 'hidden' : ''}`}
-      style={{ background: 'linear-gradient(to bottom right, rgba(229, 231, 235), #83755f, #74644b, #f3f3f3)' }}
+      style={{ background: 'linear-gradient(to bottom left, rgba(229, 231, 235), #83755f, #74644b, #f3f3f3)' }}
     >
       <h1>Log Into Lit-Lobby</h1>
       <span>
