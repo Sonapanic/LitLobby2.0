@@ -224,7 +224,7 @@ const Login = () => {
     </div>
   ) : (
     <div
-      className={`flex flex-col overflow-auto items-center mt-40 h-[30dvh] bg-gray-200 lg:text-lg lg:p-4 md:text-md rounded-lg ${location.pathname === '/contact' || location.pathname === '/about' ? 'hidden' : ''}`}
+      className={`flex flex-col overflow-auto items-center mt-40 h-[30dvh] bg-gray-200 lg:text-lg p-4 md:text-md rounded-lg ${location.pathname === '/contact' || location.pathname === '/about' ? 'hidden' : ''}`}
       style={{ backdropFilter: `blur(5px)` }}
     >
       <h1>Log Into Lit-Lobby</h1>
