@@ -34,7 +34,7 @@ function App() {
         <Header />
       </div>
       <div
-        className={currentUser ? "flex h-[81dvh]" : "flex justify-center mb-64"}
+        className={currentUser ? "flex h-full" : "flex justify-center mb-64"}
       >
         {currentUser ? (
           <div className="flex w-full">
@@ -50,7 +50,7 @@ function App() {
             currentUser ? "flex justify-center w-full mr-[30dvw]" : ""
           }`}
         >
-          <Outlet />
+          <Outlet/>
         </div>
       </div>
       <Footer />

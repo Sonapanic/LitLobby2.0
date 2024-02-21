@@ -7,6 +7,7 @@ import { Toolbar } from "@mui/material";
 import MuiDrawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
 import { styled, useTheme } from "@mui/material/styles";
+import Divider from './Divider'
 
 const openedMixin = (theme) => ({
   width: drawerWidth,
@@ -61,8 +62,11 @@ const Dashboard = () => {
       <Link to={"lobby"} className=" w-full underline text-darkGreen">
         Your Lobby
       </Link>
+      <Divider />
       <span>Friends *coming soon* </span>
+      <Divider />
       <span>Book Club *coming soon*</span>
+      <Divider />
       <span>Libraries *coming soon*</span>
     </div>
   );
