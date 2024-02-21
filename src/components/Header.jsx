@@ -11,7 +11,7 @@ const Header = () => {
   };
 
   return (
-    <div className="font-montserrat h-[7dvh] bg-gradient-to-r from-darkBrown via-viaBrown to-warmBrown w-screen flex items-center justify-between px-4 shadow-inner">
+    <div className="font-montserrat h-24 bg-gradient-to-r from-darkBrown via-viaBrown to-warmBrown w-screen flex items-center justify-between px-4 shadow-inner">
       <div>
         <span className="text-lightGrey text-3xl">
           Lit<span className="text-testShadow">-</span>

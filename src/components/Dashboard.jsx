@@ -57,8 +57,8 @@ const Drawer = styled(MuiDrawer, {
 
 const Dashboard = () => {
   return (
-    <div className="w-full h-full bg-softWhite text-center flex flex-col p-5 justify-around text-lg shadow-inner rounded-sm">
-      <Link to={"lobby"} className="underline text-darkGreen">
+    <div className="w-full h-full overflow-auto bg-softWhite text-center lg:text-lg sm:text-sm flex flex-col p-5 justify-around shadow-inner rounded-sm">
+      <Link to={"lobby"} className=" w-full underline text-darkGreen">
         Your Lobby
       </Link>
       <span>Friends *coming soon* </span>
