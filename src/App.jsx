@@ -27,7 +27,7 @@ function App() {
         backgroundPosition: "center",
         height: "100vh",
       }}
-      className="flex flex-col justify-between font-Roboto h-[100dvh] w-[100dvw] overflow-hidden"
+      className="flex flex-col justify-between font-Roboto h-[100dvh] w-[100dvw] overflow-auto"
     >
       <div>
         <ToastContainer />
