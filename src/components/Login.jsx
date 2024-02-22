@@ -116,7 +116,7 @@ const Login = () => {
   return newUser ? (
     <div
       className={`flex overflow-auto flex-col justify-between rounded-lg bg-linkWhite md:text-md mt-10 lg:text-lg w-72 p-4 h-[55dvh] ${location.pathname === '/contact' || location.pathname === '/about' ? 'hidden' : ''}`}
-      // style={{ background: 'linear-gradient(to bottom left, rgba(229, 231, 235), #83755f, #74644b, #f3f3f3)' }}
+      style={{ background: 'linear-gradient(to bottom left, #E1D4C0, #cdbfa8, #E1D4C0)' }}
     >
       <h2 className="">Please enter the following information:</h2>
       <div className="w-full flex justify-center">

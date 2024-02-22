@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
-        <div className="flex w-[100dvw] h-28 underline bg-gradient-to-l from-darkBrown via-viaBrown to-warmBrown shadow-inner items-center justify-around text-lightGrey">
+        <div className="flex w-[100dvw] h-28 underline bg-gradient-to-r from-darkBrown via-viaBrown to-warmBrown shadow-inner items-center justify-around text-darkCream">
             <Link to={"about"} className=" ">About</Link>
             <Link to={"contact"} className="">Contact</Link>
         </div>
