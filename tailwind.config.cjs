@@ -16,8 +16,9 @@ module.exports = {
         alternateBrown: '#74644b',
         testShadow: '#E5EBE3',
         midBrown: '#3c3324',
-        linkWhite: '#42444e',
-        darkGreen: '#274e13'
+        linkWhite: '#E1D4C0',
+        darkGreen: '#274e13',
+        darkCream: '#E1D4C0'
       } ,
       fontFamily: {
         book: ['Gentium Book Plus', 'serif'],

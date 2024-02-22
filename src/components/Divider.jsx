@@ -6,7 +6,7 @@
 
 
 const Divider = () => {
-    return <div className="border border-gray-300"></div>;
+    return <div className="border border-gray-600"></div>;
 }
 
 export default Divider;
