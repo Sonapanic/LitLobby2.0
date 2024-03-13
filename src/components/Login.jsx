@@ -114,164 +114,172 @@ const Login = () => {
   };
 
   return newUser ? (
-    <div
-      className={`flex overflow-auto flex-col justify-between rounded-lg bg-linkWhite md:text-md mt-10 lg:text-lg w-72 p-4 h-[55dvh] ${location.pathname === '/contact' || location.pathname === '/about' ? 'hidden' : ''}`}
-      style={{ background: 'linear-gradient(to bottom left, #E1D4C0, #cdbfa8, #E1D4C0)' }}
-    >
-      <h2 className="">Please enter the following information:</h2>
-      <div className="w-full flex justify-center">
-        <form onSubmit={handleAccountSubmit} className="w-full h-full flex flex-col">
-          <div className="">
-            <label className="block mb-2">Username</label>
-            <input
-              type="text"
-              className="border border-darkGreen focus:border-testShadow bg-softWhite focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md w-full"
-              name="username"
-              value={userInfo.username}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block mb-2">Password</label>
-            <input
-              type="password"
-              className="border bg-softWhite border-darkGreen focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md  w-full"
-              name="password"
-              value={userInfo.password}
-              onChange={handleChange}
-              required
-            />
-            {isPasswordValid ? (
-              <span></span>
-            ) : (
-              <span className="w-1/2 font-semibold">
-                Should contain at least 8 characters
-              </span>
-            )}
-          </div>
-          <div className="mb-4">
-            <label className="block mb-2">Confirm Password</label>
-            <input
-              type="password"
-              name="confirmPass"
-              value={confirmPass}
-              onChange={changeConfirm}
-              className="border bg-softWhite border-darkGreen focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md w-full"
-            />
-            {doPasswordsMatch ? (
-              <span></span>
-            ) : (
-              <span className="w-1/2 font-semibold">
-                Passwords do not match
-              </span>
-            )}
-          </div>
-          <div className="mb-4">
-            <label className="block mb-2">Email</label>
-            <input
-              type="email"
-              className="border bg-softWhite border-darkGreen focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md  w-full"
-              name="email"
-              value={userInfo.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block mb-2">First Name</label>
-            <input
-              type="text"
-              className="border border-darkGreen bg-softWhite focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md  w-full"
-              name="first_name"
-              value={userInfo.first_name}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block mb-2">Last Name</label>
-            <input
-              type="text"
-              className="border border-darkGreen bg-softWhite focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md  w-full"
-              name="last_name"
-              value={userInfo.last_name}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="w-full flex justify-between">
-            {isPasswordValid ? (
-              <input
-                type="submit"
-                className="bg-midBrown hover:bg-warmBrown text-softWhite font-semibold py-2 px-4 rounded-md shadow-md hover:shadow-inner duration-300 cursor-pointer"
-                value="Submit"
-                onSubmit={handleAccountSubmit}
-              />
-            ) : (
-              <button className="bg-midBrown hover:bg-warmBrown text-softWhite font-semibold py-2 px-4 rounded-md shadow-md hover:shadow-inner duration-300 cursor-pointer">
-                Submit
-              </button>
-            )}
-            <button
-              onClick={handleSignUp}
-              className="bg-midBrown hover:bg-warmBrown text-softWhite font-semibold py-2 px-4 rounded-md shadow-md hover:shadow-inner duration-300 cursor-pointer"
-            >
-              Back to Login
-            </button>
-          </div>
-        </form>
-      </div>
+    <div className="bg-darkCream flex justify-center text-center flex-wrap w-1/2 rounded-lg shadow-inner">
+      <h1 className="p-5 text-xl font-semibold">Lit-Lobby is down for maintenance for approximately one week</h1>
+      <p className="p-5 text-lg">Apologies for any inconvinience. Unfortunately due to database restructuring, all previously saved books and accounts have been lost. Please re-register when Lit-Lobby is back up!</p>
     </div>
+    // <div
+    //   className={`flex overflow-auto flex-col justify-between rounded-lg bg-linkWhite md:text-md mt-10 lg:text-lg w-72 p-4 h-[55dvh] ${location.pathname === '/contact' || location.pathname === '/about' ? 'hidden' : ''}`}
+    //   style={{ background: 'linear-gradient(to bottom left, #E1D4C0, #cdbfa8, #E1D4C0)' }}
+    // >
+    //   <h2 className="">Please enter the following information:</h2>
+    //   <div className="w-full flex justify-center">
+    //     <form onSubmit={handleAccountSubmit} className="w-full h-full flex flex-col">
+    //       <div className="">
+    //         <label className="block mb-2">Username</label>
+    //         <input
+    //           type="text"
+    //           className="border border-darkGreen focus:border-testShadow bg-softWhite focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md w-full"
+    //           name="username"
+    //           value={userInfo.username}
+    //           onChange={handleChange}
+    //           required
+    //         />
+    //       </div>
+    //       <div className="mb-4">
+    //         <label className="block mb-2">Password</label>
+    //         <input
+    //           type="password"
+    //           className="border bg-softWhite border-darkGreen focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md  w-full"
+    //           name="password"
+    //           value={userInfo.password}
+    //           onChange={handleChange}
+    //           required
+    //         />
+    //         {isPasswordValid ? (
+    //           <span></span>
+    //         ) : (
+    //           <span className="w-1/2 font-semibold">
+    //             Should contain at least 8 characters
+    //           </span>
+    //         )}
+    //       </div>
+    //       <div className="mb-4">
+    //         <label className="block mb-2">Confirm Password</label>
+    //         <input
+    //           type="password"
+    //           name="confirmPass"
+    //           value={confirmPass}
+    //           onChange={changeConfirm}
+    //           className="border bg-softWhite border-darkGreen focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md w-full"
+    //         />
+    //         {doPasswordsMatch ? (
+    //           <span></span>
+    //         ) : (
+    //           <span className="w-1/2 font-semibold">
+    //             Passwords do not match
+    //           </span>
+    //         )}
+    //       </div>
+    //       <div className="mb-4">
+    //         <label className="block mb-2">Email</label>
+    //         <input
+    //           type="email"
+    //           className="border bg-softWhite border-darkGreen focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md  w-full"
+    //           name="email"
+    //           value={userInfo.email}
+    //           onChange={handleChange}
+    //           required
+    //         />
+    //       </div>
+    //       <div className="mb-4">
+    //         <label className="block mb-2">First Name</label>
+    //         <input
+    //           type="text"
+    //           className="border border-darkGreen bg-softWhite focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md  w-full"
+    //           name="first_name"
+    //           value={userInfo.first_name}
+    //           onChange={handleChange}
+    //           required
+    //         />
+    //       </div>
+    //       <div className="mb-4">
+    //         <label className="block mb-2">Last Name</label>
+    //         <input
+    //           type="text"
+    //           className="border border-darkGreen bg-softWhite focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md  w-full"
+    //           name="last_name"
+    //           value={userInfo.last_name}
+    //           onChange={handleChange}
+    //           required
+    //         />
+    //       </div>
+    //       <div className="w-full flex justify-between">
+    //         {isPasswordValid ? (
+    //           <input
+    //             type="submit"
+    //             className="bg-midBrown hover:bg-warmBrown text-softWhite font-semibold py-2 px-4 rounded-md shadow-md hover:shadow-inner duration-300 cursor-pointer"
+    //             value="Submit"
+    //             onSubmit={handleAccountSubmit}
+    //           />
+            // ) : (
+  //             <button className="bg-midBrown hover:bg-warmBrown text-softWhite font-semibold py-2 px-4 rounded-md shadow-md hover:shadow-inner duration-300 cursor-pointer">
+  //               Submit
+  //             </button>
+  //           )}
+  //           <button
+  //             onClick={handleSignUp}
+  //             className="bg-midBrown hover:bg-warmBrown text-softWhite font-semibold py-2 px-4 rounded-md shadow-md hover:shadow-inner duration-300 cursor-pointer"
+  //           >
+  //             Back to Login
+  //           </button>
+  //         </div>
+  //       </form>
+  //     </div>
+  //   </div>
   ) : (
-    <div
-      className={`flex flex-col overflow-auto items-center mt-40 bg-linkWhite h-[30dvh] lg:text-lg p-4 md:text-md rounded-lg ${location.pathname === '/contact' || location.pathname === '/about' ? 'hidden' : ''}`}
-      style={{ background: 'linear-gradient(to bottom left, #E1D4C0, #cdbfa8, #E1D4C0)' }}
-    >
-      <h1>Log Into Lit-Lobby</h1>
-      <span>
-        Don't have an account?{" "}
-        {
-          <button onClick={handleSignUp} className="text-softBlack underline">
-            Sign up!
-          </button>
-        }
-      </span>
-      <form
-        onSubmit={handleLoginSubmit}
-        className="w-full mt-12 flex justify-center flex-col"
-      >
-        <div className="mb-4">
-          <label className="block mb-2">Username</label>
-          <input
-            type="text"
-            className="border border-darkGreen bg-softWhite focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md  w-full"
-            name="username"
-            value={userInfo.username}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block mb-2">Password</label>
-          <input
-            type="password"
-            className="border border-darkGreen bg-softWhite focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md  w-full"
-            name="password"
-            value={userInfo.password}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="flex justify-start w-full">
-          <input
-            type="submit"
-            className="w-1/2 bg-warmBrown hover:bg-alternateBrown text-softWhite font-semibold py-2 px-4 rounded-md shadow-md hover:shadow-inner duration-300 cursor-pointer mt-2"
-            value="Log In"
-          />
-        </div>
-      </form>
+    <div className="bg-darkCream flex justify-center text-center flex-wrap w-1/2 rounded-lg shadow-inner">
+      <h1 className="p-5 text-xl font-semibold">Lit-Lobby is down for maintenance until approximately 27 March 2024</h1>
+      <p className="p-5 text-lg">Apologies for any inconvinience. Unfortunately due to database restructuring, all previously saved books and accounts have been lost. Please re-register when Lit-Lobby is back up!</p>
     </div>
+  //   <div
+  //     className={`flex flex-col overflow-auto items-center mt-40 bg-linkWhite h-[30dvh] lg:text-lg p-4 md:text-md rounded-lg ${location.pathname === '/contact' || location.pathname === '/about' ? 'hidden' : ''}`}
+  //     style={{ background: 'linear-gradient(to bottom left, #E1D4C0, #cdbfa8, #E1D4C0)' }}
+  //   >
+  //     <h1>Log Into Lit-Lobby</h1>
+  //     <span>
+  //       Don't have an account?{" "}
+  //       {
+  //         <button onClick={handleSignUp} className="text-softBlack underline">
+  //           Sign up!
+  //         </button>
+  //       }
+  //     </span>
+  //     <form
+  //       onSubmit={handleLoginSubmit}
+  //       className="w-full mt-12 flex justify-center flex-col"
+  //     >
+  //       <div className="mb-4">
+  //         <label className="block mb-2">Username</label>
+  //         <input
+  //           type="text"
+  //           className="border border-darkGreen bg-softWhite focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md  w-full"
+  //           name="username"
+  //           value={userInfo.username}
+  //           onChange={handleChange}
+  //           required
+  //         />
+  //       </div>
+  //       <div className="mb-4">
+  //         <label className="block mb-2">Password</label>
+  //         <input
+  //           type="password"
+  //           className="border border-darkGreen bg-softWhite focus:border-testShadow focus:outline-none focus:searchbar-box-shadow duration-300 px-2 text-softBlack rounded-md  w-full"
+  //           name="password"
+  //           value={userInfo.password}
+  //           onChange={handleChange}
+  //           required
+  //         />
+  //       </div>
+  //       <div className="flex justify-start w-full">
+  //         <input
+  //           type="submit"
+  //           className="w-1/2 bg-warmBrown hover:bg-alternateBrown text-softWhite font-semibold py-2 px-4 rounded-md shadow-md hover:shadow-inner duration-300 cursor-pointer mt-2"
+  //           value="Log In"
+  //         />
+  //       </div>
+  //     </form>
+  //   </div>
   );
 };
 
