@@ -106,6 +106,7 @@ app.post("/books", async (req, res) => {
 });
 
 app.post("/register", async (req, res) => {
+  console.log(req.body)
   const { username, password, email, first_name, last_name } = req.body;
   try {
     const comparison = await pool.query(
@@ -115,8 +116,8 @@ app.post("/register", async (req, res) => {
     if (comparison.rows[0].exists === false) {
       const hashed_password = await bcrypt.hash(password, 10);
       const newUser = await pool.query(
-        "INSERT INTO users (username, hashed_password, email, first_name, last_name) VALUES ($1, $2, $3, $4, $5)",
-        [username, hashed_password, email, first_name, last_name]
+        "INSERT INTO users (username, hashed_password, email, first_name, last_name, friends, friend_requests) VALUES ($1, $2, $3, $4, $5, ARRAY[]::integer[], ARRAY[]::integer[]) RETURNING *",
+        [username, password, email, first_name, last_name]
       );
       res.status(201).json(newUser.rows[0]);
     } else {
