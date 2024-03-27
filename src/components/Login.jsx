@@ -68,7 +68,7 @@ const Login = () => {
 
     try {
       if (isPasswordValid) {
-        await fetch(`${renderUrlUrl}/register`, options);
+        await fetch(`${renderUrl}/register`, options);
         clearForm();
         handleSignUp();
         setUserCreated({ ...userCreated, isNew: true, rejected: false });
