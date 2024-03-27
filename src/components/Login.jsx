@@ -32,7 +32,7 @@ const Login = () => {
     rejected: false,
   });
 
-  const isPasswordValid = userInfo.password.length >= 8;
+  const isPasswordValid = userInfo.password.length >= 1;
 
   const doPasswordsMatch = userInfo.password === confirmPass;
 
@@ -68,7 +68,7 @@ const Login = () => {
 
     try {
       if (isPasswordValid) {
-        await fetch(`${renderUrl}/register`, options);
+        await fetch(`${renderUrlUrl}/register`, options);
         clearForm();
         handleSignUp();
         setUserCreated({ ...userCreated, isNew: true, rejected: false });
